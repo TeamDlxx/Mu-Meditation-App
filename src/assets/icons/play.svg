@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="243" height="243" viewBox="0 0 243 243">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f95500"/>
+      <stop offset="1" stop-color="#ff8500"/>
+    </linearGradient>
+  </defs>
+  <g id="play" transform="translate(-2490 -5263)">
+    <circle id="Ellipse_21" data-name="Ellipse 21" cx="121.5" cy="121.5" r="121.5" transform="translate(2490 5263)" fill="url(#linear-gradient)"/>
+    <g id="media-play-symbol" transform="translate(2532.002 5336.996)">
+      <g id="Layer_8_16_" transform="translate(52.137)">
+        <path id="Path_5" data-name="Path 5" d="M54.6.659a4.916,4.916,0,0,1,4.918,0L118.132,43.25a4.916,4.916,0,0,1,0,8.516L59.515,94.359a4.919,4.919,0,0,1-7.378-4.26V4.918A4.918,4.918,0,0,1,54.6.659Z" transform="translate(-52.137)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>
