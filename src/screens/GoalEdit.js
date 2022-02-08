@@ -81,12 +81,11 @@ export default class GoalDetail extends Component {
 
 
 
-            console.log(moment(new Date()).format("YYYY-MM-DD"), this.props.goal.goal_target_date, "twoowoowowwoowowo")
-            if ((moment(new Date()).format("YYYY-MM-DD") == moment(this.props.goal.goal_target_date).add(this.props.goal.number_of_days, 'days').format("YYYY-MM-DD")) || (moment(new Date()).format("YYYY-MM-DD") > moment(this.props.goal.goal_target_date).add(this.props.goal.number_of_days, 'days').format("YYYY-MM-DD"))) {
+            // if ((moment(new Date()).format("YYYY-MM-DD") == moment(this.props.goal.goal_target_date).add(this.props.goal.number_of_days, 'days').format("YYYY-MM-DD")) || (moment(new Date()).format("YYYY-MM-DD") > moment(this.props.goal.goal_target_date).add(this.props.goal.number_of_days, 'days').format("YYYY-MM-DD"))) {
 
-                alert("Your goal accomplishment date has been reached, you would might like to mark it complete or extend it's date.")
+            //     alert("Your goal accomplishment date has been reached, you would might like to mark it complete or extend it's date.")
 
-            }
+            // }
 
 
 
@@ -145,14 +144,11 @@ export default class GoalDetail extends Component {
     addGoalStatementApi = async () => {
 
 
-        if (this.state.goalEndDate == "") {
-            alert("Please choose end date of goal accomplishment.")
-            return
-        }
+       
 
 
-        if (this.state.goalStatement == "") {
-            alert("Please add goal statement.")
+        if (this.state.goalTitle == "") {
+            alert("Please add goal title first.")
             return
         }
 
@@ -164,8 +160,8 @@ export default class GoalDetail extends Component {
         let device_token = await DeviceInfo.getUniqueId()
 
         let params = {
-            "goal_statement": this.state.goalStatement,
-            "number_of_days": this.state.numberOfDays,
+            "goal_statement": 'any goal statment added',
+            "number_of_days": 1,
             "goal_target_date": moment(new Date()).format("YYYY-MM-DD"),
             "device_unique_id": device_token,
             "title": this.state.goalTitle
@@ -450,13 +446,13 @@ export default class GoalDetail extends Component {
                         enabled
                     >
 
-                        <ScrollView keyboardShouldPersistTaps={'handled'}>
+                        <ScrollView keyboardShouldPersistTaps={'handled'} style={{width:'100%'}}>
 
                             <View style={{ flex: 1 }}>
 
                                 <View style={styles.swiperimageContainer}>
 
-                                    <View style={{ paddingHorizontal: 20 }}>
+                                    <View style={{ paddingHorizontal: 20, }}>
 
                                         <TouchableOpacity activeOpacity={1} onPress={this.back} style={{ flexDirection: "row", alignItems: "center", marginTop: 20, marginLeft: -5 }}>
                                             <Image source={BackIcon} style={{ height: 17, width: 17, resizeMode: "contain",tintColor:'black' }} />
@@ -475,7 +471,7 @@ export default class GoalDetail extends Component {
 
 
                                         <View style={[{ minHeight: 80, backgroundColor: "white", marginTop: 20, borderRadius: 6, padding: 20, }, styles.shadow]}>
-                                            <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 14 }}>Goal title</Text>
+                                            <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 14 }}>What do you want to embody today?</Text>
                                             <TextInput
                                                 style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "#737373", borderRadius: 4, marginTop: 10, paddingLeft: 10, fontSize: 14, color: "black" }}
                                                 placeholder='I will loose 5 pounds'
@@ -486,10 +482,10 @@ export default class GoalDetail extends Component {
                                         </View>
 
 
-
+{/* 
                                         <View style={[{ minHeight: 100, backgroundColor: "white", marginTop: 10, borderRadius: 6, padding: 20, marginTop: 20 }, styles.shadow]}>
                                             <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 14 }}>What would you like to manifest in the next {this.state.numberOfDays} days:</Text>
-                                            {/* <Text style={{ color: "white", fontFamily: "Gotham-Light", fontSize: 12, marginTop: 10, fontWeight: "500" }}>End date of goal:</Text> */}
+                                            {/* <Text style={{ color: "white", fontFamily: "Gotham-Light", fontSize: 12, marginTop: 10, fontWeight: "500" }}>End date of goal:</Text> 
                                             <TouchableOpacity onPress={this.showEndDatePicker}>
                                                 <TextInput
                                                     style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "#737373", borderRadius: 4, marginTop: 10, paddingLeft: 10, fontSize: 11, color: "black" }}
@@ -516,7 +512,7 @@ export default class GoalDetail extends Component {
                                                 onChangeText={(text) => { this.setState({ goalStatement: text }) }}
                                             />
                                             <Text style={{ color: "black", fontSize: 12, textAlign: "right", marginTop: 5, fontStyle: "italic" }}>Tip: Ensure it's specific and attainable!</Text>
-                                        </View>
+                                        </View> */}
 
 
 

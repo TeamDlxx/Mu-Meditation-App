@@ -190,7 +190,7 @@ export default class GoalsListing extends Component {
 
                                         {item.status == true &&
 
-                                            <TouchableWithoutFeedback onPress={() => { this.goalDetailScreen(item) }}>
+                                            <TouchableWithoutFeedback >
                                                 <View style={[styles.shadow, { backgroundColor: "white", padding: 12, marginBottom: 10, borderRadius: 10, minHeight: 90, marginHorizontal: 15, flexDirection: "row", alignItems: "center", marginTop: index == 0 ? 10 : 0 }]}>
                                                     <View style={{ alignItems: "center", height: 50, width: 50, borderRadius: 25, justifyContent: "center", backgroundColor: "#f2f2f2" }}>
                                                         <Image source={GoalIcon} style={{ height: 28, width: 28, resizeMode: "contain" }} />
@@ -198,7 +198,7 @@ export default class GoalsListing extends Component {
                                                     <View style={{ marginLeft: 10, flex: 1 }}>
                                                         <View >
                                                             <Text style={{ fontSize: 16, fontFamily: "Gotham-Bold", alignItems: "center", }}>{item.title}</Text>
-                                                            <Text style={{ fontSize: 12, fontFamily: "Gotham-Light", marginTop: 5, marginRight: 7 }}>{item.goal_statement}</Text>
+                                                            {/* <Text style={{ fontSize: 12, fontFamily: "Gotham-Light", marginTop: 5, marginRight: 7 }}>{item.goal_statement}</Text> */}
                                                         </View>
                                                     </View>
                                                     <Image source={Marked} style={{ height: 20, width: 20, resizeMode: "contain", }} />

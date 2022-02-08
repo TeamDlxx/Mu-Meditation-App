@@ -695,13 +695,13 @@ export default class Home extends Component {
                                         <Image source={GoalIcon} style={{ height: 28, width: 28, resizeMode: "contain",tintColor:'#a1863e' }} />
                                         <View style={{ marginLeft: 10 }}>
                                             <Text style={{ fontSize: 18, fontFamily: "Gotham-Bold", alignItems: "center", }}>{this.state.goal.title}</Text>
-                                            <Text style={{ fontSize: 12, fontFamily: "Gotham-Light", marginTop: 5 }}>{this.state.goal.goal_statement}</Text>
+                                            {/* <Text style={{ fontSize: 12, fontFamily: "Gotham-Light", marginTop: 5 }}>{this.state.goal.goal_statement}</Text> */}
                                         </View>
                                     </View>
-                                    <View style={{ height: 5, backgroundColor: "#f2f2f2", width: "100%", marginTop: 25 }}>
+                                    {/* <View style={{ height: 5, backgroundColor: "#f2f2f2", width: "100%", marginTop: 25 }}>
                                         <View style={{ height: 4, backgroundColor: "#a1863e", width: "40%" }}></View>
-                                    </View>
-                                    <Text style={{ textAlign: "right", fontSize: 11, fontStyle: "italic", marginTop: 4 }}>{this.state.goal.number_of_days} days left</Text>
+                                    </View> */}
+                                    {/* <Text style={{ textAlign: "right", fontSize: 11, fontStyle: "italic", marginTop: 4 }}>{this.state.goal.number_of_days} days left</Text> */}
                                 </View>
                             </TouchableWithoutFeedback>
 

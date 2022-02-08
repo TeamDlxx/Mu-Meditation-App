@@ -30,7 +30,7 @@ import Background from "../assets/icons/background.jpg";
 
 import DeviceInfo from 'react-native-device-info';
 import moment from "moment"
-import Swipe1 from "../assets/swipe2.png"
+import Swipe1 from "../assets/swiperImage.jpeg"
 import Swipe2 from "../assets/swipe2.png"
 import Swipe3 from "../assets/swipe3.png"
 var i = 0;
@@ -198,8 +198,7 @@ export default class Swipe extends Component {
     nextButtonForDateSlide = async () => {
 
 
-        if (this.state.goalEndDate != "" && this.state.goalStatement !== "" && this.state.goalTitle !== "") {
-            console.log(this.state.numberOfDays, "number of days")
+        if (this.state.goalTitle !== "") {
             this.addGoalStatementApi()
         }
 
@@ -236,8 +235,8 @@ export default class Swipe extends Component {
         const url = domain + "/api/goal";
         let device_token = await DeviceInfo.getUniqueId();
         let params = {
-            "goal_statement": this.state.goalStatement,
-            "number_of_days": this.state.numberOfDays,
+            "goal_statement": 'some goal statements required',
+            "number_of_days": 1,
             "goal_target_date": moment(new Date()).format("YYYY-MM-DD"),
             "device_unique_id": device_token,
             "title": this.state.goalTitle
@@ -401,18 +400,19 @@ export default class Swipe extends Component {
                                 enabled
                             >
 
-                                <ScrollView>
+                                <ScrollView style={{width:'90%',}}>
 
                                     <View style={styles.swiperimageContainer}>
 
                                         {/* <Image source={Swipe2} style={styles.swiperImage} /> */}
-                                        <View style={{ paddingHorizontal: 20 }}>
+                                        <View style={{ width:'100%',alignSelf:'center',padding:10 }}>
+                                            <Image style={{width:250,height:250,alignSelf:'center'}} source={Swipe1}></Image>
                                             <Text style={{ color: "Black", fontFamily: "Gotham-Black", fontSize: 21, textAlign: "center", marginTop: 20 }}>First let's clarify your vision</Text>
-                                            <View style={[{ minHeight: 80, backgroundColor: "white", marginTop: 30, borderRadius: 6, padding: 20, }, styles.shadow]}>
-                                                <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 17 }}>Goal title</Text>
+                                            <View style={[{ minHeight: 100, backgroundColor: "white", marginTop: 50, borderRadius: 6, padding: 20,width:'100%' }, styles.shadow]}>
+                                                <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 17 }}>What do you want to embody today?</Text>
                                                 {/* <View style={{height:37, marginTop: 10,}}> */}
                                                 <TextInput
-                                                    style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "#737373", borderRadius: 4, paddingLeft: 10, fontSize: 14, color: "white", marginTop: 5 }}
+                                                    style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "#737373", borderRadius: 4, paddingLeft: 10, fontSize: 14, color: "black", marginTop: 5 }}
                                                     placeholder='I will loose 5 pounds'
                                                     placeholderTextColor="#737373"
                                                     onChangeText={(text) => { this.setState({ goalTitle: text }) }}
@@ -421,9 +421,9 @@ export default class Swipe extends Component {
 
                                             </View>
 
+{/*
 
-
-                                            <View style={[{ minHeight: 100, backgroundColor: "white", marginTop: 10, borderRadius: 6, padding: 20, marginTop: 20 }, styles.shadow]}>
+                                             <View style={[{ minHeight: 100, backgroundColor: "white", marginTop: 10, borderRadius: 6, padding: 20, marginTop: 20,width:'100%' }, styles.shadow]}>
                                                 <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 17 }}>What would you like to manifest in the next {this.state.numberOfDays} days:</Text>
 
                                                 <Text style={{ color: "black", fontFamily: "Gotham-Light", fontSize: 12, marginTop: 15, fontWeight: "500" }}>End date of goal:</Text>
@@ -453,7 +453,7 @@ export default class Swipe extends Component {
                                                     onChangeText={(text) => { this.setState({ goalStatement: text }) }}
                                                 />
                                                 <Text style={{ color: "black", fontSize: 12, textAlign: "right", marginTop: 5, fontStyle: "italic" }}>Tip: Ensure it's specific and attainable!</Text>
-                                            </View>
+                                            </View> */}
 
                                             <TouchableOpacity onPress={this.nextButtonForDateSlide} style={{ backgroundColor: "#a1863e", width: 150, alignItems: "center", justifyContent: "center", height: 38, borderRadius: 5, alignSelf: "center", marginTop: 20 }}>
                                                 <Text style={{ color: "white", fontFamily: "Gotham-Black" }}>Next</Text>

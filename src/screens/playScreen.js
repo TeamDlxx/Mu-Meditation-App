@@ -18,7 +18,8 @@ import {
   BackHandler,
   ScrollView,
   AppState,
-  Alert
+  Alert,
+  
 
 } from 'react-native';
 
@@ -74,6 +75,7 @@ import { domain } from '../components/utilities'
 
 import NextIcon from "../assets/icons/next.png";
 import PreviousIcon from "../assets/icons/previous.png";
+import WebView from 'react-native-webview';
 
 var i = 0;
 var sliderLength = 325;
@@ -401,7 +403,8 @@ export default class PlayScreen extends Component {
       ],
       bgSoundsArrayOffline: [],
       tracksArrayRecieved: [],
-      currentPlayingIndex: ""
+      currentPlayingIndex: "",
+      currentTab:'audio',
 
     };
   }
@@ -2201,6 +2204,17 @@ export default class PlayScreen extends Component {
 
   };
 
+  changeCurrentTab=async(item)=>{
+    console.log(item,'item')
+
+    await this.setState({currentTab:item})
+    if (this.state.currentTab=='video' && this.state.pauseOrPlay==pauseIcon)
+    {
+      console.log('video tab press')
+      this.togglePlayback()
+    }
+    
+  }
   render() {
 
 
@@ -2288,7 +2302,7 @@ export default class PlayScreen extends Component {
                 {this.state.trackImage !== "" &&
                   <View
                     style={{
-                      marginTop: 30,
+                      marginBottom: 10,
                       justifyContent: 'center',
                       alignItems: 'center',
                       shadowColor: 'gray',
@@ -2297,10 +2311,10 @@ export default class PlayScreen extends Component {
                       shadowRadius: 2,
                       elevation: 3,
                       backgroundColor: '#0000',
-                      height: 200,
+                      height: 150,
                     }}>
                     <Image
-                      style={{ height: 200, width: 210, borderRadius: 20 }}
+                      style={{ height: 150, width: 160, borderRadius: 20 }}
                       resizeMode="stretch"
                       source={(this.state.isInternetConnected === true) ? { uri: this.state.trackImage } : require('../assets/icons/music_icon.jpg')}
                     // source={{uri:this.state.trackImage}}
@@ -2312,11 +2326,18 @@ export default class PlayScreen extends Component {
 
               </ImageBackground>
             </View>
+            <View style={{ flexDirection:'row',marginTop:10}}>
+              <TouchableOpacity onPress={()=>{this.changeCurrentTab('audio')}} style={(this.state.currentTab=='audio')?{flex:1,backgroundColor:'#D2A33A',alignItems:'center',justifyContent:'center',marginHorizontal:20,borderRadius:20}:{flex:1,alignItems:'center',justifyContent:'center',marginHorizontal:20,borderRadius:20}}>
+                <Text style={(this.state.currentTab=='audio')?{alignSelf:'center',justifyContent:'center',fontSize:14,fontWeight:'bold',color:'white',paddingVertical:10}:{alignSelf:'center',justifyContent:'center',fontSize:14,fontWeight:'bold',color:'gray',paddingVertical:10}}>Audio</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={()=>{this.changeCurrentTab('video')}} style={(this.state.currentTab=='video')?{flex:1,backgroundColor:'#D2A33A',alignItems:'center',justifyContent:'center',marginHorizontal:20,borderRadius:20}:{flex:1,alignItems:'center',justifyContent:'center',marginHorizontal:20,borderRadius:20}}>
+              <Text style={(this.state.currentTab=='video')?{alignSelf:'center',justifyContent:'center',fontSize:14,fontWeight:'bold',color:'white',paddingVertical:10}:{alignSelf:'center',justifyContent:'center',fontSize:14,fontWeight:'bold',color:'gray',paddingVertical:10}}>Video</Text>
+              </TouchableOpacity>
+            </View>
 
 
-
-
-            <View style={{ flex: 5 }}>
+            {(this.state.currentTab=='audio') &&
+            <View style={{ flex: 6 }}>
 
 
 
@@ -2466,10 +2487,27 @@ export default class PlayScreen extends Component {
               {/* three play buttons */}
 
             </View>
+            }
+
+            {(this.state.currentTab=='video') &&
+            <View style={{ flex: 7 }}>
+              <View style={{ alignItems: "center", justifyContent: "center", width: Dimensions.get("window").width, height: '100%', marginTop: 20 }}>
+                                <WebView
+                                    source={{ uri: encodeURI('https://vimeo.com/253989945') }}
+                                    style={{ width: 360, height: '100%', backgroundColor: "black",marginBottom:30 }}
+                                    resizeMode="contain"
+                                    allowsFullscreenVideo={true}
+                                    startInLoadingState={true}
+                                />
+                            </View>
+              </View>
+            }
+
 
             {/* background effects */}
 
             {/* {this.props.track.background_music === true && */}
+            {this.state.currentTab=='audio' &&
             <View style={{
               flex: 1,
               shadowColor: "silver",
@@ -2497,6 +2535,7 @@ export default class PlayScreen extends Component {
                 </View>
               </TouchableOpacity>
             </View>
+            }
 
             {/* } */}
 
@@ -2510,7 +2549,7 @@ export default class PlayScreen extends Component {
         }
 
 
-        {this.state.showBgEffectsScreen === true &&
+        {this.state.showBgEffectsScreen === true && this.state.currentTab=='audio' &&
 
 
           <View style={{ flex: 1 }}>
