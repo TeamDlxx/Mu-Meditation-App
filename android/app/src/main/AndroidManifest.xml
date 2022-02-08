@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.mindmanifestation.app">
+  package="com.mumeditation.app">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.android.vending.BILLING" />
@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-      android:name="com.mindmanifestation.app.MainApplication"
+      android:name="com.mumeditation.app.MainApplication"
       android:label="@string/app_name"
       android:icon="@drawable/app_icon"
       android:roundIcon="@drawable/app_icon"
@@ -23,7 +23,7 @@
 
 
         <activity
-            android:name="com.mindmanifestation.app.SplashActivity"
+            android:name="com.mumeditation.app.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/SplashTheme"
             android:screenOrientation="portrait"
@@ -42,7 +42,7 @@
         </activity>
 
       <activity
-        android:name="com.mindmanifestation.app.MainActivity"
+        android:name="com.mumeditation.app.MainActivity"
         android:label="@string/app_name"
         android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
         android:windowSoftInputMode="adjustResize"

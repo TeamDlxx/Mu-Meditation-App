@@ -131,12 +131,12 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.mindmanifestation.app"
+        applicationId "com.mumeditation.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         missingDimensionStrategy "RNN.reactNativeVersion", "reactNative60"
-        versionCode 13
-        versionName "1.0.12"
+        versionCode 1
+        versionName "1.0"
         multiDexEnabled = true
 
     }

@@ -242,7 +242,7 @@ export default class Upgrade extends Component {
 
 
                 {this.state.isAnimating &&
-                    <ActivityIndicator size="large" color="#497CF0" animating={this.state.isAnimating} style={styles.loading} />
+                    <ActivityIndicator size="large" color="#a1863e" animating={this.state.isAnimating} style={styles.loading} />
                 }
 
                 <View style={{ flexDirection: "row", height: 50 }}>
@@ -390,7 +390,7 @@ export default class Upgrade extends Component {
                             width: "100%",
                             justifyContent: "center",
                             alignItems: "center",
-                            shadowColor: '#497CF0',
+                            shadowColor: '#a1863e',
                             shadowOffset: { width: 0, height: 9 },
                             shadowOpacity: 0.2,
                             shadowRadius: 2,
@@ -400,7 +400,7 @@ export default class Upgrade extends Component {
 
                         }}
                         >
-                            <TouchableOpacity onPress={() => this.requestForOneTime("lifetimesubscription")} style={{ alignItems: "center", width: "100%", borderRadius: 25, padding: 10, backgroundColor: "#497CF0", flexDirection: "row", justifyContent: "center", height: 55 }}>
+                            <TouchableOpacity onPress={() => this.requestForOneTime("lifetimesubscription")} style={{ alignItems: "center", width: "100%", borderRadius: 25, padding: 10, backgroundColor: "#a1863e", flexDirection: "row", justifyContent: "center", height: 55 }}>
                                 <Text style={{
                                     fontFamily: "Gotham-Bold", color: "white", fontSize: 20, paddingRight: 7,
                                 }}>{this.state.LocalLifeTimePyament}</Text>
@@ -422,15 +422,15 @@ export default class Upgrade extends Component {
                             {/* <Text style={{fontSize:14,fontFamily:"Gotham-Bold", color:"#497CF0", marginTop:23, marginBottom:10}}> */}
 
                             <TouchableOpacity onPress={this.PrivacyPolicyFunction}>
-                                <Text style={{ fontSize: 14, fontFamily: "Gotham-Black", color: "#497CF0", marginTop: 23, marginBottom: 10, fontWeight: "bold" }}>Privacy Policy  </Text>
+                                <Text style={{ fontSize: 14, fontFamily: "Gotham-Black", color: "#a1863e", marginTop: 23, marginBottom: 10, fontWeight: "bold" }}>Privacy Policy  </Text>
 
                             </TouchableOpacity>
 
 
-                            <Text style={{ fontSize: 14, fontFamily: "Gotham-Bold", color: "#497CF0", marginTop: 23, marginBottom: 10 }}>and</Text>
+                            <Text style={{ fontSize: 14, fontFamily: "Gotham-Bold", color: "#a1863e", marginTop: 23, marginBottom: 10 }}>and</Text>
 
                             <TouchableOpacity onPress={this.TermOfUseFunction}>
-                                <Text style={{ fontSize: 14, fontFamily: "Gotham-Black", color: "#497CF0", marginTop: 23, marginBottom: 10, fontWeight: "bold" }}>  Terms of Use</Text>
+                                <Text style={{ fontSize: 14, fontFamily: "Gotham-Black", color: "#a1863e", marginTop: 23, marginBottom: 10, fontWeight: "bold" }}>  Terms of Use</Text>
                             </TouchableOpacity>
 
 

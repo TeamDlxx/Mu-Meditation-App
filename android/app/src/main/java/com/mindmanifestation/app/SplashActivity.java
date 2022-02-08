@@ -1,4 +1,4 @@
-package com.mindmanifestation.app;
+package com.mumeditation.app;
 
 import android.content.Intent;
 import android.os.Bundle;

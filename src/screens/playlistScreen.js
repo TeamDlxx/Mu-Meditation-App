@@ -207,7 +207,7 @@ export default class HomeScreen extends Component{
 
 
                 {this.state.isAnimating &&
-                        <ActivityIndicator size="large" color="#497CF0" animating={this.state.isAnimating}  style={styles.loading}/>
+                        <ActivityIndicator size="large" color="#a1863e" animating={this.state.isAnimating}  style={styles.loading}/>
                 }
 
                 <View style={{marginTop:8}} >
@@ -269,7 +269,7 @@ export default class HomeScreen extends Component{
                 {this.state.purchase === "" && item.lock === true &&
                 
                 <View style={{
-                    shadowColor: '#497CF0',
+                    shadowColor: '#a1863e',
                      shadowOffset: { width: 1, height: 2 },
                      shadowOpacity: 0.2,
                      shadowRadius: 2,
@@ -302,7 +302,7 @@ export default class HomeScreen extends Component{
                
                 alignItems: "center",
                 flex: 1,
-                shadowColor:'#497CF0',
+                shadowColor:'#a1863e',
                 shadowOffset: { width: 0, height: 9 },
                 shadowOpacity: 0.2,
                 shadowRadius: 2,
@@ -310,11 +310,11 @@ export default class HomeScreen extends Component{
                 backgroundColor: "#0000"
             }}
             >
-                <TouchableOpacity onPress={this.UpgradeFunction} style={{ alignItems:"center",width: "85%", borderRadius: 25, padding: 10, backgroundColor: "#497CF0", flexDirection: "row", justifyContent: "space-between", height: 55 }}>
-                    <Text style={{ color: "white", padding: 5, fontWeight: "bold", fontSize: 16, fontFamily: 'Gotham-Bold', marginLeft:10 }}>Try Premium</Text>
+                <TouchableOpacity onPress={this.UpgradeFunction} style={{ alignItems:"center",width: "85%", borderRadius: 25, padding: 10, backgroundColor: "#a1863e", flexDirection: "row", justifyContent: "space-between", height: 55 }}>
+                    <Text style={{ color: "white", padding: 5, fontWeight: "bold", fontSize: 16, fontFamily: 'Gotham-Bold', marginLeft:10 }}>Join the Membership</Text>
 
                     <TouchableOpacity onPress={this.UpgradeFunction} style={{ paddingLeft: 12, paddingRight: 12, borderRadius: 15, backgroundColor: "white", padding: 9, alignItems: "center", justifyContent: "center" }}>
-                        <Text style={{ fontSize: 11, color: "#497CF0", fontWeight: "bold", fontFamily: 'Gotham-Bold' }}>Upgrade</Text>
+                        <Text style={{ fontSize: 11, color: "#a1863e", fontWeight: "bold", fontFamily: 'Gotham-Bold',paddingHorizontal:10 }}>Join</Text>
                     </TouchableOpacity>
                 </TouchableOpacity>
             </View>

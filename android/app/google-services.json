@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "17416467652",
-    "firebase_url": "https://poised-mental-training.firebaseio.com",
-    "project_id": "poised-mental-training",
-    "storage_bucket": "poised-mental-training.appspot.com"
+    "project_number": "318208464688",
+    "project_id": "mu-meditation",
+    "storage_bucket": "mu-meditation.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:17416467652:android:d5c9178829c8532042c591",
+        "mobilesdk_app_id": "1:318208464688:android:8da28081848388cfbb5af5",
         "android_client_info": {
-          "package_name": "com.mindmanifestation.app"
+          "package_name": "com.mumeditation.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "17416467652-8h6u31dgll8ahhnbvhhut1ie61mk2joc.apps.googleusercontent.com",
+          "client_id": "318208464688-o8kmcnieh237nklln2bq3kjokql27dv7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD04rtC71rdJ0QAUzPkCgH_5fK4PXdcX_Y"
+          "current_key": "AIzaSyDloTvOXlWPWM4ClbuCmOKXwCPShdxN_4M"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "17416467652-8h6u31dgll8ahhnbvhhut1ie61mk2joc.apps.googleusercontent.com",
+              "client_id": "318208464688-o8kmcnieh237nklln2bq3kjokql27dv7.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "17416467652-q67goj4hh85r7f83oq7c0i9jqua3arop.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.mindmanifestation.app"
-              }
             }
           ]
         }

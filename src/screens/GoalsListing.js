@@ -228,7 +228,7 @@ export default class GoalsListing extends Component {
 
 
                     {this.state.isAnimating &&
-                        <ActivityIndicator size="large" color="#5890E5" animating={this.state.isAnimating} style={styles.loading} />
+                        <ActivityIndicator size="large" color="#a1863e" animating={this.state.isAnimating} style={styles.loading} />
                     }
 
 

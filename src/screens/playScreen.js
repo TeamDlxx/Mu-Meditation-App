@@ -2224,7 +2224,7 @@ export default class PlayScreen extends Component {
             }}>
               <View style={{ width: "45%", height: 100, borderRadius: 6, backgroundColor: "white", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
 
-                <ActivityIndicator size="large" color="#497CF0" animating={this.state.isAnimating} />
+                <ActivityIndicator size="large" color="#a1863e" animating={this.state.isAnimating} />
                 <Text>Downloading...</Text>
 
               </View>
@@ -2243,7 +2243,7 @@ export default class PlayScreen extends Component {
             {Platform.OS == "ios" &&
               <View>
 
-                <MyStatusBar backgroundColor="#6C97F8" barStyle="light-content" />
+                <MyStatusBar backgroundColor="#D2A33A" barStyle="light-content" />
                 <View style={styles.appBar} />
               </View>
 
@@ -2257,10 +2257,11 @@ export default class PlayScreen extends Component {
               <ImageBackground
                 source={oval}
                 style={{ height: "95%", width: "100%" }}
+                imageStyle={{height:'100%'}}
                 resizeMode={"stretch"}
               >
                 {/* white cross */}
-                <View style={{ flexDirection: 'row', marginTop: 25 }}>
+                <View style={{ flexDirection: 'row', marginTop: 25, }}>
                   <View style={{ flex: 0.6 }}></View>
                   <View style={{ flex: 1, }}>
                     <TouchableOpacity onPress={this.BackFunction}>
@@ -2416,7 +2417,7 @@ export default class PlayScreen extends Component {
                     style={{
                       justifyContent: 'center',
                       alignItems: 'center',
-                      shadowColor: '#497CF0',
+                      shadowColor: '#a1863e',
                       shadowOffset: { width: 0, height: 9 },
                       shadowOpacity: 0.2,
                       shadowRadius: 2,
@@ -2483,7 +2484,7 @@ export default class PlayScreen extends Component {
 
                   <View
                     style={{
-                      shadowColor: '#497CF0',
+                      shadowColor: '#a1863e',
                       shadowOffset: { width: 0, height: 5 },
                       shadowOpacity: 0.2,
                       shadowRadius: 2,
@@ -2587,7 +2588,7 @@ export default class PlayScreen extends Component {
                       </TouchableOpacity>
 
                       <TouchableOpacity onPress={this.doneButnModal}>
-                        <Text style={{ fontFamily: "Gotham-Bold", color: "#497CF0", fontSize: 17 }}>Done</Text>
+                        <Text style={{ fontFamily: "Gotham-Bold", color: "#a1863e", fontSize: 17 }}>Done</Text>
                       </TouchableOpacity>
                     </View>
 
@@ -2661,7 +2662,7 @@ export default class PlayScreen extends Component {
                       }}
 
                       selectedStyle={{
-                        backgroundColor: '#4778E8',
+                        backgroundColor: '#a1863e',
                       }}
                       unselectedStyle={{
                         backgroundColor: '#DDE6F8',
@@ -2699,7 +2700,7 @@ export default class PlayScreen extends Component {
                       max={30}
 
                       selectedStyle={{
-                        backgroundColor: '#4778E8',
+                        backgroundColor: '#a1863e',
                       }}
                       unselectedStyle={{
                         backgroundColor: '#DDE6F8',
@@ -2788,7 +2789,7 @@ export default class PlayScreen extends Component {
                       style={styles.slider}
 
                       selectedStyle={{
-                        backgroundColor: '#4778E8',
+                        backgroundColor: '#a1863e',
                       }}
                       unselectedStyle={{
                         backgroundColor: '#DDE6F8',
@@ -2827,7 +2828,7 @@ export default class PlayScreen extends Component {
                       style={styles.slider}
 
                       selectedStyle={{
-                        backgroundColor: '#4778E8',
+                        backgroundColor: '#a1863e',
                       }}
                       unselectedStyle={{
                         backgroundColor: '#DDE6F8',
@@ -2892,7 +2893,7 @@ export default class PlayScreen extends Component {
                       max={30}
                       style={styles.slider}
                       selectedStyle={{
-                        backgroundColor: '#4778E8',
+                        backgroundColor: '#a1863e',
                       }}
                       unselectedStyle={{
                         backgroundColor: '#DDE6F8',
@@ -2957,7 +2958,7 @@ export default class PlayScreen extends Component {
                       values={[this.state.birdsEffectValue]}
 
                       selectedStyle={{
-                        backgroundColor: '#4778E8',
+                        backgroundColor: '#a1863e',
                       }}
                       unselectedStyle={{
                         backgroundColor: '#DDE6F8',
@@ -3025,7 +3026,7 @@ export default class PlayScreen extends Component {
                       values={[this.state.snowEffectValue]}
                       minimumValue={0}
                       selectedStyle={{
-                        backgroundColor: '#4778E8',
+                        backgroundColor: '#a1863e',
                       }}
                       unselectedStyle={{
                         backgroundColor: '#DDE6F8',
@@ -3113,7 +3114,7 @@ export default class PlayScreen extends Component {
                       <Text style={{ fontFamily: "Gotham-Light", paddingRight: 7 }}>{this.state.selectedTime}</Text>
                       <View
                         style={{
-                          shadowColor: '#497CF0',
+                          shadowColor: '#a1863e',
                           shadowOffset: { width: 0, height: 5 },
                           shadowOpacity: 0.2,
                           shadowRadius: 2,
@@ -3220,7 +3221,7 @@ const styles = StyleSheet.create({
     height: STATUSBAR_HEIGHT,
   },
   appBar: {
-    backgroundColor: '#6C97F8',
+    backgroundColor: '#a1863e',
     height: APPBAR_HEIGHT,
     flexDirection: 'row',
     width: "100%",
@@ -3236,14 +3237,14 @@ const pickerSelectStyles = StyleSheet.create({
     paddingHorizontal: 25,
     paddingBottom: 16,
     borderRadius: 28,
-    backgroundColor: '#497CF0',
+    backgroundColor: '#a1863e',
     color: 'white',
     width: "50%",
     alignItems: "center",
     justifyContent: "center",
     marginLeft: 80,
     marginTop: 20,
-    shadowColor: '#497CF0',
+    shadowColor: '#a1863e',
     shadowOffset: { width: 0, height: 9 },
     shadowOpacity: 0.2,
     shadowRadius: 2,
@@ -3253,8 +3254,8 @@ const pickerSelectStyles = StyleSheet.create({
   inputAndroid: {
     fontSize: 14,
     color: 'white',
-    backgroundColor: '#497CF0',
-    shadowColor: '#497CF0',
+    backgroundColor: '#a1863e',
+    shadowColor: '#a1863e',
     borderRadius: 28,
     shadowOffset: { width: 0, height: 9 },
     shadowOpacity: 0.2,

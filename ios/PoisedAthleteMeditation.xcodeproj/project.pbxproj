@@ -12,6 +12,7 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		16CD7B0127B0FD1500A94365 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16CD7B0027B0FD1500A94365 /* GoogleService-Info.plist */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -28,7 +29,6 @@
 		3EBA218D6F124BDF9007EA3C /* Gotham-BookItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 005381B7B20E40D2B37B667A /* Gotham-BookItalic.ttf */; };
 		3EBAC93D23C70930004F97D8 /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBAC93C23C70930004F97D8 /* dummy.swift */; };
 		3EC35F27242A2D7C003AFAD3 /* rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3EC35F26242A2D7C003AFAD3 /* rain.mp3 */; };
-		48671AEF2643A05500F81015 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48671AEE2643A05500F81015 /* GoogleService-Info.plist */; };
 		4C017950EDBB0353422031F9 /* libPods-PoisedAthleteMeditation-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7756EDB2D980B627180B65BE /* libPods-PoisedAthleteMeditation-tvOS.a */; };
 		4C6798953EC49DC1BD6C9E55 /* libPods-PoisedAthleteMeditationTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73C3D1041393A41B65FC547B /* libPods-PoisedAthleteMeditationTests.a */; };
 		4E338613090483D93037420E /* libPods-PoisedAthleteMeditation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C47BBBDA6FB2CE1652C845 /* libPods-PoisedAthleteMeditation.a */; };
@@ -75,6 +75,7 @@
 		14EE87215D777A9EFD3404DE /* Pods-PoisedAthleteMeditationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoisedAthleteMeditationTests.release.xcconfig"; path = "Target Support Files/Pods-PoisedAthleteMeditationTests/Pods-PoisedAthleteMeditationTests.release.xcconfig"; sourceTree = "<group>"; };
 		154CD43E80DE4FB284449330 /* Gotham-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Light.ttf"; path = "../src/assets/fonts/Gotham-Light.ttf"; sourceTree = "<group>"; };
 		15B918BA9C7C824A9E43072C /* Pods-PoisedAthleteMeditation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoisedAthleteMeditation.debug.xcconfig"; path = "Target Support Files/Pods-PoisedAthleteMeditation/Pods-PoisedAthleteMeditation.debug.xcconfig"; sourceTree = "<group>"; };
+		16CD7B0027B0FD1500A94365 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Documents/officeWork/poisedmentaltrainingapp/ios/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E86BEEBB764987639EB5D4B /* libPods-PoisedAthleteMeditation-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PoisedAthleteMeditation-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		231D3D70EAD34EBC967CDB7D /* GothamBook.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GothamBook.ttf; path = ../src/assets/fonts/GothamBook.ttf; sourceTree = "<group>"; };
 		289842B9D0644AADB4C29477 /* GothamBookItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = GothamBookItalic.ttf; path = ../src/assets/fonts/GothamBookItalic.ttf; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		3EBAC93B23C70930004F97D8 /* PoisedAthleteMeditation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PoisedAthleteMeditation-Bridging-Header.h"; sourceTree = "<group>"; };
 		3EBAC93C23C70930004F97D8 /* dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
 		3EC35F26242A2D7C003AFAD3 /* rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rain.mp3; sourceTree = "<group>"; };
-		48671AEE2643A05500F81015 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48671AF42643A05A00F81015 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		48E04E1E057C4A5CB36A51E9 /* Gotham-UltraItalic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-UltraItalic.otf"; path = "../src/assets/fonts/Gotham-UltraItalic.otf"; sourceTree = "<group>"; };
 		50C47BBBDA6FB2CE1652C845 /* libPods-PoisedAthleteMeditation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PoisedAthleteMeditation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,7 +278,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				48671AEE2643A05500F81015 /* GoogleService-Info.plist */,
+				16CD7B0027B0FD1500A94365 /* GoogleService-Info.plist */,
 				3EBAC93C23C70930004F97D8 /* dummy.swift */,
 				13B07FAE1A68108700A75B9A /* PoisedAthleteMeditation */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -470,7 +470,7 @@
 				3E870E6C23EC2AD900F46A31 /* music.mp3 in Resources */,
 				3E212546240F8B23007D29E2 /* river.mp3 in Resources */,
 				A2B0A77E95304A34A3BF656E /* Gotham-XLightItalic.ttf in Resources */,
-				48671AEF2643A05500F81015 /* GoogleService-Info.plist in Resources */,
+				16CD7B0127B0FD1500A94365 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,18 +782,18 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PoisedAthleteMeditation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mindmanifestation.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mumeditation.app;
 				PRODUCT_NAME = PoisedAthleteMeditation;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PoisedAthleteMeditation-Bridging-Header.h";
@@ -811,17 +811,17 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PoisedAthleteMeditation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mindmanifestation.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mumeditation.app;
 				PRODUCT_NAME = PoisedAthleteMeditation;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PoisedAthleteMeditation-Bridging-Header.h";

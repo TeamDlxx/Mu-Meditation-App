@@ -1,4 +1,4 @@
-package com.mindmanifestation.app;
+package com.mumeditation.app;
 
 import android.os.Bundle;
 
@@ -12,7 +12,8 @@ public class MainActivity extends NavigationActivity {
 
     @Override
     protected  void onCreate(Bundle savedInstanceState){
-        SplashScreen.show(this, R.style.AppTheme);
+        // SplashScreen.show(this, R.style.AppTheme);
+        SplashScreen.show(this, R.style.AppTheme);  // false to disable fullscreen
         super.onCreate(savedInstanceState);
     }
 

@@ -679,10 +679,10 @@ export default class Home extends Component {
 
 
                         <View style={{ flexDirection: "row", alignItems: "center" }}>
-                            <Text style={{ fontSize: 24, fontWeight: "900", fontFamily: "Gotham-Black", alignItems: "center", }}>Manifestation</Text>
+                            <Text style={{ fontSize: 24, fontWeight: "900", fontFamily: "Gotham-Black", alignItems: "center", }}>Mu Meditation</Text>
                             <View style={{ flex: 1 }}></View>
                             <TouchableOpacity onPress={this.goalsListingScreen}>
-                                <Image source={Archive} style={{ height: 19, width: 19, resizeMode: "contain" }} />
+                                <Image source={Archive} style={{ height: 19, width: 19, resizeMode: "contain",tintColor:'#a1863e' }} />
                             </TouchableOpacity>
                         </View>
 
@@ -690,16 +690,16 @@ export default class Home extends Component {
                         {this.state.isGoalAdded ?
 
                             <TouchableWithoutFeedback onPress={this.goalDetailScreen}>
-                                <View style={[styles.shadow, { backgroundColor: "white", padding: 20, marginTop: 20, borderRadius: 10, minHeight: 80, justifyContent: "center" }]}>
+                                <View style={[styles.shadow, { backgroundColor: "white", paddingHorizontal: 20,paddingVertical:30, marginTop: 20, borderRadius: 10, minHeight: 80, justifyContent: "center" }]}>
                                     <View style={{ flexDirection: "row", alignItems: "center" }}>
-                                        <Image source={GoalIcon} style={{ height: 28, width: 28, resizeMode: "contain" }} />
+                                        <Image source={GoalIcon} style={{ height: 28, width: 28, resizeMode: "contain",tintColor:'#a1863e' }} />
                                         <View style={{ marginLeft: 10 }}>
                                             <Text style={{ fontSize: 18, fontFamily: "Gotham-Bold", alignItems: "center", }}>{this.state.goal.title}</Text>
                                             <Text style={{ fontSize: 12, fontFamily: "Gotham-Light", marginTop: 5 }}>{this.state.goal.goal_statement}</Text>
                                         </View>
                                     </View>
-                                    <View style={{ height: 5, backgroundColor: "#f2f2f2", width: "100%", marginTop: 15 }}>
-                                        <View style={{ height: 4, backgroundColor: "#558EE8", width: "40%" }}></View>
+                                    <View style={{ height: 5, backgroundColor: "#f2f2f2", width: "100%", marginTop: 25 }}>
+                                        <View style={{ height: 4, backgroundColor: "#a1863e", width: "40%" }}></View>
                                     </View>
                                     <Text style={{ textAlign: "right", fontSize: 11, fontStyle: "italic", marginTop: 4 }}>{this.state.goal.number_of_days} days left</Text>
                                 </View>
@@ -708,15 +708,15 @@ export default class Home extends Component {
                             :
 
                             <TouchableWithoutFeedback onPress={this.addGoalScreen}>
-                                <View style={[styles.shadow, { backgroundColor: "white", padding: 20, marginTop: 20, borderRadius: 10, minHeight: 80, justifyContent: "center" }]}>
+                                <View style={[styles.shadow, { backgroundColor: "white", paddingHorizontal: 20,paddingVertical:30, marginTop: 20, borderRadius: 10, minHeight: 80, justifyContent: "center" }]}>
                                     <View style={{ flexDirection: "row", alignItems: "center" }}>
-                                        <Image source={GoalIcon} style={{ height: 28, width: 28, resizeMode: "contain" }} />
+                                        <Image source={GoalIcon} style={{ height: 28, width: 28, resizeMode: "contain",tintColor:'#a1863e' }} />
                                         <View style={{ marginLeft: 10 }}>
                                             <Text style={{ fontSize: 18, fontFamily: "Gotham-Bold", alignItems: "center", }}>Current Goal</Text>
                                             <Text style={{ fontSize: 12, fontFamily: "Gotham-Light", marginTop: 5, }}>You have not set your goal yet, Tap to add now.</Text>
                                         </View>
                                     </View>
-                                    <View style={{ backgroundColor: "#558EE8", alignItems: "center", justifyContent: "center", borderRadius: 5, height: 35, marginTop: 12 }}>
+                                    <View style={{ backgroundColor: "#a1863e", alignItems: "center", justifyContent: "center", borderRadius: 5, height: 35, marginTop: 25 }}>
                                         <Text style={{ color: "white", fontWeight: "500" }}>+ Add goal</Text>
                                     </View>
                                 </View>
@@ -725,229 +725,13 @@ export default class Home extends Component {
                         }
 
 
-                        <Text style={{ fontSize: 18, fontFamily: "Gotham-Bold", alignItems: "center", marginTop: 20 }}>Today's Manifest</Text>
+                        {/* <Text style={{ fontSize: 18, fontFamily: "Gotham-Bold", alignItems: "center", marginTop: 20 }}>Today's Manifest</Text> */}
 
 
 
 
 
-                        {this.state.todaysManifestation !== "" &&
-
-                            <TouchableOpacity activeOpacity = {1} onPress = {this.menifestAction}>
-
-
-                                {/* only evening */}
-                                {(this.state.todaysManifestation.manifest_evening.length !== 0 && this.state.todaysManifestation.manifest_morning.length === 0) &&
-
-                                    <View style={styles.journalItems}>
-
-                                        <View style={{ flexDirection: "row", justifyContent: "space-between", padding: 10 }}>
-                                            <View style={{ flexDirection: "row", }} >
-                                                <Text style={{ fontSize: 16, color: "#8C93A7", fontWeight: 'bold', }}>{moment(this.state.todaysManifestation.manifest_date).format("DD MMM, ")}</Text>
-                                                <Text style={{ fontSize: 16, color: "#A2A8B8", fontWeight: '300' }}>{moment(this.state.todaysManifestation.manifest_date).format("dddd")}</Text>
-                                            </View>
-
-                                            <View style={{ flex: 1 }}></View>
-
-                                            <View style={{ flexDirection: "row" }}>
-                                                <Image source={Yes_evening} resizeMode='contain' style={{ width: 32, height: 32, marginRight: 10 }} />
-                                                <Image source={Not_morning} resizeMode='contain' style={{ width: 32, height: 32, }} />
-                                            </View>
-
-
-                                        </View>
-
-
-                                        <View style={{ paddingTop: 10, paddingBottom: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-
-                                            <View style={{}}>
-
-                                                {this.state.todaysManifestation.manifest_evening[0].manifest_mood === "Bad" &&
-                                                    <Image source={bad_day} resizeMode='contain' style={{ width: 80, height: 80, }} />
-                                                }
-
-                                                {this.state.todaysManifestation.manifest_evening[0].manifest_mood === "Sad" &&
-                                                    <Image source={sad_day} resizeMode='contain' style={{ width: 80, height: 80, }} />
-                                                }
-
-                                                {this.state.todaysManifestation.manifest_evening[0].manifest_mood === "Emotion Less" &&
-                                                    <Image source={normal_day} resizeMode='contain' style={{ width: 80, height: 80, }} />
-                                                }
-
-                                                {this.state.todaysManifestation.manifest_evening[0].manifest_mood === "Happy" &&
-                                                    <Image source={Happy_day} resizeMode='contain' style={{ width: 80, height: 80, }} />
-                                                }
-
-                                                {this.state.todaysManifestation.manifest_evening[0].manifest_mood === "Very Happy" &&
-                                                    <Image source={extra_happy_day} resizeMode='contain' style={{ width: 80, height: 80, }} />
-                                                }
-
-                                            </View>
-
-
-                                            <View style={{ width: "70%", flexDirection: "column" }}>
-                                                <FlatList
-
-                                                    listKey={(item, index) => 'D' + index.toString()}
-                                                    data={this.state.todaysManifestation.manifest_evening[0].universe_action}
-                                                    style={{ width: "100%" }}
-                                                    showsVerticalScrollIndicator={false}
-                                                    renderItem={({ item, index }) => (
-
-                                                        <View style={{ borderRadius: 20, padding: 10, backgroundColor: "#F4F5F7", marginBottom: 10 }}>
-                                                            <Text style={{ fontSize: 15, color: "#363636", fontWeight: '300' }}>{item.universe_action_title}</Text>
-                                                        </View>
-
-                                                    )}
-                                                />
-                                            </View>
-                                        </View>
-
-
-
-
-                                        <View style={{}}>
-                                            {this.burnigDesire(this.state.todaysManifestation.manifest_evening[0].burning_desire)}
-                                        </View>
-
-                                    </View>
-
-                                }
-
-
-
-
-
-
-
-
-                                {/* both morning and evening */}
-                                {(this.state.todaysManifestation.manifest_evening.length !== 0 && this.state.todaysManifestation.manifest_morning.length !== 0) &&
-
-                                    <View style={styles.journalItems}>
-
-                                        <View style={{ flexDirection: "row", justifyContent: "space-between", padding: 10 }}>
-                                            <View style={{ flexDirection: "row", }} >
-                                                <Text style={{ fontSize: 16, color: "#8C93A7", fontWeight: 'bold', }}>{moment(this.state.todaysManifestation.manifest_date).format("D MMM, ")}</Text>
-                                                <Text style={{ fontSize: 16, color: "#A2A8B8", fontWeight: '300' }}>{moment(this.state.todaysManifestation.manifest_date).format("dddd")}</Text>
-                                            </View>
-                                            <View style={{ flex: 1 }}></View>
-
-                                            <View style={{ flexDirection: "row" }}>
-                                                <Image source={Both_yes} resizeMode='contain' style={{ width: 32, height: 32, }} />
-                                            </View>
-                                        </View>
-
-
-                                        <View style={{ paddingTop: 10, paddingBottom: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-
-                                            <View style={{}}>
-
-                                                {this.state.todaysManifestation.manifest_evening[0].manifest_mood === "Bad" &&
-                                                    <Image source={bad_day} resizeMode='contain' style={{ width: 80, height: 80, }} />
-                                                }
-
-                                                {this.state.todaysManifestation.manifest_evening[0].manifest_mood === "Sad" &&
-                                                    <Image source={sad_day} resizeMode='contain' style={{ width: 80, height: 80, }} />
-                                                }
-
-                                                {this.state.todaysManifestation.manifest_evening[0].manifest_mood === "Emotion Less" &&
-                                                    <Image source={normal_day} resizeMode='contain' style={{ width: 80, height: 80, }} />
-                                                }
-
-                                                {this.state.todaysManifestation.manifest_evening[0].manifest_mood === "Happy" &&
-                                                    <Image source={Happy_day} resizeMode='contain' style={{ width: 80, height: 80, }} />
-                                                }
-
-                                                {this.state.todaysManifestation.manifest_evening[0].manifest_mood === "Very Happy" &&
-                                                    <Image source={extra_happy_day} resizeMode='contain' style={{ width: 80, height: 80, }} />
-                                                }
-
-                                            </View>
-
-                                            <View style={{ width: "70%", flexDirection: "column" }}>
-
-                                                <FlatList
-
-                                                    listKey={(item, index) => 'D' + index.toString()}
-                                                    data={this.state.todaysManifestation.manifest_morning[0].manifest_intention_action}
-                                                    style={{ width: "100%" }}
-                                                    showsVerticalScrollIndicator={false}
-                                                    renderItem={({ item, index }) => (
-
-                                                        <View style={{ borderRadius: 20, padding: 10, backgroundColor: "#F4F5F7", marginBottom: 10 }}>
-                                                            <Text style={{ fontSize: 15, color: "#363636", fontWeight: '300' }}>{item.intention_title}</Text>
-                                                        </View>
-
-                                                    )}
-                                                />
-                                            </View>
-
-                                        </View>
-
-                                        <View style={{}}>
-                                            {this.motivation(this.state.todaysManifestation.manifest_evening[0].burning_desire)}
-                                        </View>
-
-                                    </View>
-
-                                }
-
-
-
-                                {/*morning only*/}
-
-                                {(this.state.todaysManifestation.manifest_evening.length === 0 && this.state.todaysManifestation.manifest_morning.length !== 0) &&
-
-                                    <View style={styles.journalItems}>
-
-                                        <View style={{ flexDirection: "row", justifyContent: "space-between", padding: 10 }}>
-                                            <View style={{ flexDirection: "row", }} >
-                                                <Text style={{ fontSize: 16, color: "#8C93A7", fontWeight: 'bold', }}>{moment(this.state.todaysManifestation.manifest_date).format("D MMM, ")}</Text>
-                                                <Text style={{ fontSize: 16, color: "#A2A8B8", fontWeight: '300' }}>{moment(this.state.todaysManifestation.manifest_date).format("dddd")}</Text>
-                                            </View>
-                                            <View style={{ flex: 1 }}></View>
-
-                                            <View style={{ flexDirection: "row" }}>
-                                                <Image source={Yes_morning} resizeMode='contain' style={{ width: 32, height: 32, marginRight: 10 }} />
-                                                <Image source={Not_evening} resizeMode='contain' style={{ width: 32, height: 32, }} />
-                                            </View>
-                                        </View>
-
-
-                                        <View style={{ paddingTop: 10, paddingBottom: 10, flexDirection: "row", justifyContent: "space-between", alignItems: "center" }}>
-
-
-                                            <View style={{ width: "100%", flexDirection: "column" }}>
-
-                                                <FlatList
-                                                    listKey={(item, index) => 'D' + index.toString()}
-                                                    data={this.state.todaysManifestation.manifest_morning[0].manifest_intention_action}
-                                                    style={{ width: "100%" }}
-                                                    showsVerticalScrollIndicator={false}
-                                                    renderItem={({ item, index }) => (
-
-                                                        <View style={{ borderRadius: 20, padding: 10, backgroundColor: "#F4F5F7", marginBottom: 10 }}>
-                                                            <Text style={{ fontSize: 15, color: "#363636", fontWeight: '300' }}>{item.intention_title}</Text>
-                                                        </View>
-
-                                                    )}
-                                                />
-
-                                            </View>
-                                        </View>
-
-                                        <View style={{}}>
-                                            {this.feelActions(this.state.todaysManifestation.manifest_morning[0].feel_action)}
-                                        </View>
-
-                                    </View>
-                                }
-
-                            </TouchableOpacity>
-
-                        }
-
+                        
 
 
                      
@@ -957,53 +741,16 @@ export default class Home extends Component {
 
 
 
-                        {console.log(this.state.morningManifestAdded, this.state.eveningManifestAdded, "fgfgfggfgfgfgfggfgg")}
-
-                        {(this.state.morningManifestAdded == false && this.state.eveningManifestAdded == false) ?
-
-                            <TouchableWithoutFeedback onPress={this.addFunction}>
-                                <ImageBackground imageStyle={{ borderRadius: 20 }} source={Background} style={{ height: 400, width: "100%", alignItems: "center", justifyContent: "center", marginTop: 20, alignSelf: "center" }}>
-                                    <TouchableOpacity style={{ alignItems: "center", justifyContent: "center" }} onPress={this.addFunction}>
-                                        <Image source={AddButton} style={{ height: 70, width: 70 }} />
-                                        <Text style={{ color: "white", fontWeight: "300", fontSize: 20, marginTop: 25, textAlign: "center" }}>Tap to Add Today's manifestation</Text>
-                                    </TouchableOpacity>
-                                </ImageBackground>
-                            </TouchableWithoutFeedback>
-
-
-                            :
-
-
-
-                            <View>
-                                {(this.state.morningManifestAdded == false) &&
-                                    <TouchableOpacity onPress={this.AddmorningManifestFunction} style={{ backgroundColor: "#528CEB", alignItems: "center", justifyContent: "center", height: 45, borderRadius: 8 }}>
-                                        <Text style={{ color: "white", fontWeight: "500" }}>{"+ Enter Morning's Entry"}</Text>
-                                    </TouchableOpacity>
-                                }
-
-                                {(this.state.eveningManifestAdded == false) &&
-                                    <TouchableOpacity onPress={this.state.morningManifestAdded == false ? this.AddmorningManifestFunction : this.AddeveningManifestFunction} style={{ backgroundColor: "#528CEB", alignItems: "center", justifyContent: "center", height: 45, borderRadius: 8 }}>
-                                        <Text style={{ color: "white", fontWeight: "500" }}>{this.state.morningManifestAdded == false ? "+ Enter Morning's Entry" : "+ Enter Evening's Entry"}</Text>
-                                    </TouchableOpacity>
-                                }
-
-                            </View>
-
-
-                        }
-
-
 
 
 
                         {(this.state.featuredAudio !== "" && this.state.featuredAudio !== undefined && this.state.featuredAudio !== null) &&
 
 
-                            <View>
+                            <View style={[styles.shadow, { backgroundColor: "white", paddingHorizontal: 20,paddingVertical:20, marginTop: 20, borderRadius: 10, minHeight: 80, justifyContent: "center" }]}>
 
 
-                                <Text style={{ fontSize: 18, fontFamily: "Gotham-Bold", alignItems: "center", marginTop: 20 }}>Featured Audio</Text>
+                                <Text style={{ fontSize: 18, fontFamily: "Gotham-Bold", alignItems: "center", marginTop: 10 }}>Featured Audio</Text>
 
                                 <TouchableOpacity onPress={() => { this.playTrackFunction() }} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
 

@@ -12,7 +12,8 @@
     "postinstall": "npx jetify",
     "build:ios": "react-native bundle --entry-file='index.js' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'",
     "android_aab": "./gradlew bundleRelease",
-    "clean": "watchman watch-del-all && rm -rf node_modules/ && yarn cache clean && yarn install"
+    "clean": "watchman watch-del-all && rm -rf node_modules/ && yarn cache clean && yarn install",
+    "pod": "cd ios && pod install && cd .."
   },
   "dependencies": {
     "@ptomasroos/react-native-multi-slider": "^1.0.0",

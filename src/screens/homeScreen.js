@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 
-import Flower from '../assets/icons/download.jpeg'
-
-import TryPremium from '../assets/icons/tryPremium.png'
-
 import { Navigation } from 'react-native-navigation';
 import SearchIcon from '../assets/icons/search-icon.png';
 import LockIcon from '../assets/icons/unlock.png';
-import hearticon from '../assets/icons/blueheart.png';
 
 
 import Swipeout from 'react-native-swipeout';
@@ -988,7 +983,7 @@ export default class HomeScreen extends Component {
 
 
                 {this.state.isAnimating &&
-                    <ActivityIndicator size="large" color="#497CF0" animating={this.state.isAnimating} style={styles.loading} />
+                    <ActivityIndicator size="large" color="#a1863e" animating={this.state.isAnimating} style={styles.loading} />
                 }
 
 
@@ -996,7 +991,7 @@ export default class HomeScreen extends Component {
                 {/* <View style={{justifyContent: "center"}}> */}
                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 15, marginBottom: 25, }}>
 
-                    <Text style={{ fontSize: 24, fontWeight: "900", fontFamily: "Gotham-Black", alignItems: "center", paddingLeft: 10 }}>Manifestation</Text>
+                    <Text style={{ fontSize: 24, fontWeight: "900", fontFamily: "Gotham-Black", alignItems: "center", paddingLeft: 10 }}>Mu Meditation</Text>
 
                     <TouchableWithoutFeedback onPress={this.heartButtonAction} >
                         <View>
@@ -1018,13 +1013,13 @@ export default class HomeScreen extends Component {
 
                     <TouchableWithoutFeedback onPress={this.playListFunction}  >
                         <View>
-                            <Text style={[(this.state.playLIst == true) ? { fontSize: 18, fontWeight: "bold", color: "#3778EF" } : { fontSize: 16 }, { flexDirection: "column", fontFamily: 'Gotham-Light' }]}>
+                            <Text style={[(this.state.playLIst == true) ? { fontSize: 18, fontWeight: "bold", color: "#a1863e" } : { fontSize: 16 }, { flexDirection: "column", fontFamily: 'Gotham-Light' }]}>
                                 Playlist
                                     </Text>
 
                             {
                                 this.state.playLIst == true &&
-                                <Text style={{ marginTop: -8, color: "#3778EF", fontWeight: "bold", textAlign: "center", paddingRight: 13 }}>___</Text>
+                                <Text style={{ marginTop: -8, color: "#a1863e", fontWeight: "bold", textAlign: "center", paddingRight: 13 }}>___</Text>
                             }
                         </View>
 
@@ -1032,12 +1027,12 @@ export default class HomeScreen extends Component {
 
                     <TouchableWithoutFeedback onPress={this.allTracksFunction} >
                         <View>
-                            <Text style={[(this.state.allTracks == true) ? { fontSize: 18, fontWeight: "bold", color: "#3778EF" } : { fontSize: 16 }, { flexDirection: "column", fontFamily: 'Gotham-Light', }]}>
+                            <Text style={[(this.state.allTracks == true) ? { fontSize: 18, fontWeight: "bold", color: "#a1863e" } : { fontSize: 16 }, { flexDirection: "column", fontFamily: 'Gotham-Light', }]}>
                                 All Tracks
                                     </Text>
                             {
                                 this.state.allTracks == true &&
-                                <Text style={{ marginTop: -8, color: "#3778EF", fontWeight: "bold", textAlign: "center", paddingLeft: 11 }}>___</Text>
+                                <Text style={{ marginTop: -8, color: "#a1863e", fontWeight: "bold", textAlign: "center", paddingLeft: 11 }}>___</Text>
                             }
                         </View>
                     </TouchableWithoutFeedback>
@@ -1046,12 +1041,12 @@ export default class HomeScreen extends Component {
 
                     <TouchableWithoutFeedback onPress={this.favouritesTab} >
                         <View>
-                            <Text style={[(this.state.favouritesTabSelected == true) ? { fontSize: 18, fontWeight: "bold", color: "#3778EF" } : { fontSize: 16 }, {flexDirection: "column", fontFamily: 'Gotham-Light', }]}>
+                            <Text style={[(this.state.favouritesTabSelected == true) ? { fontSize: 18, fontWeight: "bold", color: "#a1863e" } : { fontSize: 16 }, {flexDirection: "column", fontFamily: 'Gotham-Light', }]}>
                                 Favourites
                                     </Text>
                             {
                                 this.state.favouritesTabSelected == true &&
-                                <Text style={{ marginTop: -8, color: "#3778EF", fontWeight: "bold", textAlign: "center", paddingLeft: 11 }}>___</Text>
+                                <Text style={{ marginTop: -8, color: "#a1863e", fontWeight: "bold", textAlign: "center", paddingLeft: 11 }}>___</Text>
                             }
                         </View>
                     </TouchableWithoutFeedback>
@@ -1175,7 +1170,7 @@ export default class HomeScreen extends Component {
                                 <View style={{
                                     width: "100%",
                                     alignItems: "center",
-                                    shadowColor: '#497CF0',
+                                    shadowColor: '#a1863e',
                                     shadowOffset: { width: 0, height: 9 },
                                     shadowOpacity: 0.2,
                                     shadowRadius: 2,
@@ -1185,11 +1180,11 @@ export default class HomeScreen extends Component {
 
                                 }}
                                 >
-                                    <TouchableOpacity onPress={this.UpgradeFunction} style={{ alignItems: "center", width: "85%", borderRadius: 30, padding: 10, backgroundColor: "#497CF0", flexDirection: "row", justifyContent: "space-between", height: 55 }}>
-                                        <Text style={{ color: "white", padding: 5, fontWeight: "bold", fontSize: 18, fontFamily: 'Gotham-Bold', marginLeft: 13 }}>Try Premium</Text>
+                                    <TouchableOpacity onPress={this.UpgradeFunction} style={{ alignItems: "center", width: "85%", borderRadius: 30, padding: 10, backgroundColor: "#a1863e", flexDirection: "row", justifyContent: "space-between", height: 55 }}>
+                                        <Text style={{ color: "white", padding: 5, fontWeight: "bold", fontSize: 18, fontFamily: 'Gotham-Bold', marginLeft: 13 }}>Join the Membership</Text>
 
                                         <TouchableOpacity onPress={this.UpgradeFunction} style={{ paddingLeft: 12, paddingRight: 12, borderRadius: 15, backgroundColor: "white", padding: 9, alignItems: "center", justifyContent: "center" }}>
-                                            <Text style={{ fontSize: 11, color: "#497CF0", fontWeight: "bold", fontFamily: 'Gotham-Bold' }}>Upgrade</Text>
+                                            <Text style={{ fontSize: 11, color: "#a1863e", fontWeight: "bold", fontFamily: 'Gotham-Bold',paddingHorizontal:10 }}>Join</Text>
                                         </TouchableOpacity>
                                     </TouchableOpacity>
                                 </View>
@@ -1294,7 +1289,7 @@ export default class HomeScreen extends Component {
                                                     {this.state.purchase === "" && item.lock === true &&
 
                                                         <View style={{
-                                                            shadowColor: '#497CF0',
+                                                            shadowColor: '#a1863e',
                                                             shadowOffset: { width: 1, height: 2 },
                                                             shadowOpacity: 0.2,
                                                             shadowRadius: 2,
@@ -1329,7 +1324,7 @@ export default class HomeScreen extends Component {
                                 <View style={{
                                     width: "100%",
                                     alignItems: "center",
-                                    shadowColor: '#497CF0',
+                                    shadowColor: '#a1863e',
                                     shadowOffset: { width: 0, height: 9 },
                                     shadowOpacity: 0.2,
                                     shadowRadius: 2,
@@ -1337,11 +1332,11 @@ export default class HomeScreen extends Component {
                                     backgroundColor: "#0000",
                                 }}
                                 >
-                                    <TouchableOpacity onPress={this.UpgradeFunction} style={{ alignItems: "center", width: "85%", borderRadius: 30, padding: 10, backgroundColor: "#497CF0", flexDirection: "row", justifyContent: "space-between", height: 55 }}>
-                                        <Text style={{ color: "white", padding: 5, fontWeight: "bold", fontSize: 18, fontFamily: 'Gotham-Bold', marginLeft: 13 }}>Try Premium</Text>
+                                    <TouchableOpacity onPress={this.UpgradeFunction} style={{ alignItems: "center", width: "85%", borderRadius: 30, padding: 10, backgroundColor: "#a1863e", flexDirection: "row", justifyContent: "space-between", height: 55 }}>
+                                        <Text style={{ color: "white", padding: 5, fontWeight: "bold", fontSize: 18, fontFamily: 'Gotham-Bold', marginLeft: 13 }}>Join the Membership</Text>
 
                                         <TouchableOpacity onPress={this.UpgradeFunction} style={{ paddingLeft: 12, paddingRight: 12, borderRadius: 15, backgroundColor: "white", padding: 8, alignItems: "center", justifyContent: "center" }}>
-                                            <Text style={{ fontSize: 11, color: "#497CF0", fontWeight: "bold", fontFamily: 'Gotham-Bold' }}>Upgrade</Text>
+                                            <Text style={{ fontSize: 11, color: "#a1863e", fontWeight: "bold", fontFamily: 'Gotham-Bold',paddingHorizontal:10 }}>Join</Text>
                                         </TouchableOpacity>
                                     </TouchableOpacity>
                                 </View>

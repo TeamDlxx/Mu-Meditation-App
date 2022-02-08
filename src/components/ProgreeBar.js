@@ -73,11 +73,11 @@ export default class TrackSlider extends TrackPlayer.ProgressComponent {
           style={styles.slider}
           value={this.state.isSeeking ? this.state.position : this.state.position}
 
-            thumbTintColor="#497CF0"
-            minimumTrackTintColor="#497CF0"
+            thumbTintColor="#a1863e"
+            minimumTrackTintColor="#a1863e"
             maximumTrackTintColor="#DDE6F8"
             minimumValue={0}
-            thumbStyle={{ width: 11, height: 11,  shadowOpacity: 0.9,shadowColor:"#497CF0",elevation:1,
+            thumbStyle={{ width: 11, height: 11,  shadowOpacity: 0.9,shadowColor:"#a1863e",elevation:1,
             shadowOffset: {
               width: 0,
               height: 0,

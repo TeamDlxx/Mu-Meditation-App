@@ -437,9 +437,9 @@ export default class GoalDetail extends Component {
     render() {
         return (
 
-            <SafeAreaView style={[styles.container, { backgroundColor: "#62C7FB" }]} >
+            <SafeAreaView style={[styles.container, { backgroundColor: "white" }]} >
 
-                <ImageBackground style={styles.container} source={Background}>
+                <View style={styles.container} >
 
                     <KeyboardAwareScrollView
                         resetScrollToCoords={{ x: 0, y: 0 }}
@@ -459,14 +459,14 @@ export default class GoalDetail extends Component {
                                     <View style={{ paddingHorizontal: 20 }}>
 
                                         <TouchableOpacity activeOpacity={1} onPress={this.back} style={{ flexDirection: "row", alignItems: "center", marginTop: 20, marginLeft: -5 }}>
-                                            <Image source={BackIcon} style={{ height: 17, width: 17, resizeMode: "contain" }} />
-                                            <Text style={{ color: "white", fontFamily: "Gotham-Black", fontSize: 21, }}>  Let's clarify your vision</Text>
+                                            <Image source={BackIcon} style={{ height: 17, width: 17, resizeMode: "contain",tintColor:'black' }} />
+                                            <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 21, }}>  Let's clarify your vision</Text>
 
                                             <View style={{ flex: 1 }}></View>
 
                                             {(this.props.goal !== undefined && this.props.goal !== null && this.props.goal !== "") &&
                                                 <TouchableOpacity onPress={this.deleteGoal}>
-                                                    <Image source={DeleteIcon} style={{ height: 18, width: 18, resizeMode: "contain" }} />
+                                                    <Image source={DeleteIcon} style={{ height: 18, width: 18, resizeMode: "contain",tintColor:'black' }} />
                                                 </TouchableOpacity>
                                             }
 
@@ -474,12 +474,12 @@ export default class GoalDetail extends Component {
 
 
 
-                                        <View style={[{ minHeight: 80, backgroundColor: "#5FBAF8", marginTop: 20, borderRadius: 6, padding: 20, }, styles.shadow]}>
-                                            <Text style={{ color: "#f2f2f2", fontFamily: "Gotham-Black", fontSize: 17 }}>Goal title</Text>
+                                        <View style={[{ minHeight: 80, backgroundColor: "white", marginTop: 20, borderRadius: 6, padding: 20, }, styles.shadow]}>
+                                            <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 14 }}>Goal title</Text>
                                             <TextInput
-                                                style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "white", borderRadius: 4, marginTop: 10, paddingLeft: 10, fontSize: 14, color: "white" }}
+                                                style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "#737373", borderRadius: 4, marginTop: 10, paddingLeft: 10, fontSize: 14, color: "black" }}
                                                 placeholder='I will loose 5 pounds'
-                                                placeholderTextColor="#f2f2f2"
+                                                placeholderTextColor="#737373"
                                                 value={this.state.goalTitle}
                                                 onChangeText={(text) => { this.setState({ goalTitle: text }) }}
                                             />
@@ -487,14 +487,14 @@ export default class GoalDetail extends Component {
 
 
 
-                                        <View style={[{ minHeight: 100, backgroundColor: "#5FBAF8", marginTop: 10, borderRadius: 6, padding: 20, marginTop: 20 }, styles.shadow]}>
-                                            <Text style={{ color: "white", fontFamily: "Gotham-Black", fontSize: 14 }}>What would you like to manifest in the next {this.state.numberOfDays} days:</Text>
+                                        <View style={[{ minHeight: 100, backgroundColor: "white", marginTop: 10, borderRadius: 6, padding: 20, marginTop: 20 }, styles.shadow]}>
+                                            <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 14 }}>What would you like to manifest in the next {this.state.numberOfDays} days:</Text>
                                             {/* <Text style={{ color: "white", fontFamily: "Gotham-Light", fontSize: 12, marginTop: 10, fontWeight: "500" }}>End date of goal:</Text> */}
                                             <TouchableOpacity onPress={this.showEndDatePicker}>
                                                 <TextInput
-                                                    style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "#f2f2f2", borderRadius: 4, marginTop: 10, paddingLeft: 10, fontSize: 11, color: "white" }}
+                                                    style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "#737373", borderRadius: 4, marginTop: 10, paddingLeft: 10, fontSize: 11, color: "black" }}
                                                     placeholder="Choose End date for goal"
-                                                    placeholderTextColor="#f2f2f2"
+                                                    placeholderTextColor="#737373"
                                                     onTouchStart={this.showEndDatePicker}
                                                     editable={false}
                                                     value={this.state.goalEndDate}
@@ -505,30 +505,30 @@ export default class GoalDetail extends Component {
 
 
 
-                                        <View style={[{ minHeight: 80, backgroundColor: "#5FBAF8", marginTop: 20, borderRadius: 6, padding: 20, }, styles.shadow]}>
-                                            <Text style={{ color: "#f2f2f2", fontFamily: "Gotham-Black", fontSize: 14 }}>Write one goal you want the most</Text>
+                                        <View style={[{ minHeight: 80, backgroundColor: "white", marginTop: 20, borderRadius: 6, padding: 20, }, styles.shadow]}>
+                                            <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 14 }}>Write one goal you want the most</Text>
                                             <TextInput
-                                                style={{ height: 95, width: "100%", borderWidth: 0.5, borderColor: "white", borderRadius: 4, marginTop: 10, paddingLeft: 10, fontSize: 14, color: "white" }}
+                                                style={{ height: 95, width: "100%", borderWidth: 0.5, borderColor: "#737373", borderRadius: 4, marginTop: 10, paddingLeft: 10, fontSize: 14, color: "black" }}
                                                 placeholder='ex: "I weigh__lbs"'
                                                 value={this.state.goalStatement}
-                                                placeholderTextColor="#f2f2f2"
+                                                placeholderTextColor="#737373"
                                                 multiline={true}
                                                 onChangeText={(text) => { this.setState({ goalStatement: text }) }}
                                             />
-                                            <Text style={{ color: "white", fontSize: 12, textAlign: "right", marginTop: 5, fontStyle: "italic" }}>Tip: Ensure it's specific and attainable!</Text>
+                                            <Text style={{ color: "black", fontSize: 12, textAlign: "right", marginTop: 5, fontStyle: "italic" }}>Tip: Ensure it's specific and attainable!</Text>
                                         </View>
 
 
 
                                         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-                                            <TouchableOpacity onPress={this.props.goal !== undefined ? this.editGoalApi : this.addGoalStatementApi} style={{ backgroundColor: "white", width: 150, alignItems: "center", justifyContent: "center", height: 38, borderRadius: 5, alignSelf: "center", marginTop: 30, marginRight: 3 }}>
-                                                <Text style={{ color: "#4C84ED", fontFamily: "Gotham-Black" }}>Save</Text>
+                                            <TouchableOpacity onPress={this.props.goal !== undefined ? this.editGoalApi : this.addGoalStatementApi} style={{ backgroundColor: "#a1863e", width: 150, alignItems: "center", justifyContent: "center", height: 38, borderRadius: 5, alignSelf: "center", marginTop: 30, marginRight: 3 }}>
+                                                <Text style={{ color: "white", fontFamily: "Gotham-Black" }}>Save</Text>
                                             </TouchableOpacity>
 
                                             {(this.props.goal !== undefined && this.props.goal !== null && this.props.goal !== "") &&
                                             
-                                                <TouchableOpacity onPress={this.markComplete} style={{ backgroundColor: "white", width: 150, alignItems: "center", justifyContent: "center", height: 38, borderRadius: 5, alignSelf: "center", marginTop: 30, marginLeft: 3 }}>
-                                                    <Text style={{ color: "#4C84ED", fontFamily: "Gotham-Black" }}>Mark Complete</Text>
+                                                <TouchableOpacity onPress={this.markComplete} style={{ backgroundColor: "#a1863e", width: 150, alignItems: "center", justifyContent: "center", height: 38, borderRadius: 5, alignSelf: "center", marginTop: 30, marginLeft: 3 }}>
+                                                    <Text style={{ color: "white", fontFamily: "Gotham-Black" }}>Mark Complete</Text>
                                                 </TouchableOpacity>
                                             }
 
@@ -562,7 +562,7 @@ export default class GoalDetail extends Component {
                             </View>
                         </ScrollView>
                     </KeyboardAwareScrollView>
-                </ImageBackground>
+                </View>
             </SafeAreaView>
 
         )

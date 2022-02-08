@@ -211,7 +211,7 @@ export default class Settings extends Component {
 
             // console.log('if 25 then Running on Nougat!');
 
-            subject: 'Manifestation Journal App Feedback \n' + "Platform: " + Platform.OS + "\nBrand: " + await DeviceInfo.getBrand() + "\nOS Version: " + Platform.Version + "\nApp Version: " + await DeviceInfo.getVersion(),
+            subject: 'Mu Meditation App Feedback \n' + "Platform: " + Platform.OS + "\nBrand: " + await DeviceInfo.getBrand() + "\nOS Version: " + Platform.Version + "\nApp Version: " + await DeviceInfo.getVersion(),
             body: ''
         }).catch(console.error)
 
@@ -219,40 +219,54 @@ export default class Settings extends Component {
 
 
 
+    // PrivacyPolicyFunction = () => {
+
+    //     Navigation.push(this.props.componentId, {
+    //         component: {
+    //             name: 'poisedAthleteMeditation.privacyPolicy',
+    //             passProps: {
+    //                 privacyPolicyString: this.state.PrivacyPolicy,
+
+
+    //             },
+    //             options: {
+    //                 bottomTabs: { visible: false },
+    //             }
+
+    //         }
+
+    //     });
+    // }
+
+
+    // TermOfUseFunction = () => {
+
+    //     Navigation.push(this.props.componentId, {
+    //         component: {
+    //             name: 'poisedAthleteMeditation.termOfUse',
+    //             passProps: {
+    //                 termOfUseString: this.state.termOfUse,
+
+    //             },
+    //             options: {
+    //                 bottomTabs: { visible: false },
+    //             }
+    //         }
+    //     });
+    // }
+
+
     PrivacyPolicyFunction = () => {
 
-        Navigation.push(this.props.componentId, {
-            component: {
-                name: 'poisedAthleteMeditation.privacyPolicy',
-                passProps: {
-                    privacyPolicyString: this.state.PrivacyPolicy,
+        Linking.openURL('https://www.kamahagar.com/privacy-policy').catch(err => console.error("Couldn't load page", err));
 
-
-                },
-                options: {
-                    bottomTabs: { visible: false },
-                }
-
-            }
-
-        });
     }
 
 
     TermOfUseFunction = () => {
 
-        Navigation.push(this.props.componentId, {
-            component: {
-                name: 'poisedAthleteMeditation.termOfUse',
-                passProps: {
-                    termOfUseString: this.state.termOfUse,
+        Linking.openURL('https://www.kamahagar.com/terms-of-service').catch(err => console.error("Couldn't load page", err));
 
-                },
-                options: {
-                    bottomTabs: { visible: false },
-                }
-            }
-        });
     }
 
     refresh = async () => {
@@ -433,7 +447,7 @@ export default class Settings extends Component {
                         <View style={styles.listItem}>
                             <Text style={styles.itemtxt}>Automatically play next track</Text>
                             <Switch
-                                trackColor={{ false: "#767577", true: "#497CF0" }}
+                                trackColor={{ false: "#767577", true: "#a1863e" }}
                                 thumbColor={"#f4f3f4"}
                                 ios_backgroundColor="#3e3e3e"
                                 onValueChange={this.toggleSwitch}

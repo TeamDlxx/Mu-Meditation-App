@@ -36,9 +36,9 @@ import Swipe3 from "../assets/swipe3.png"
 var i = 0;
 
 
-import Logo from "../assets/icons/ggg.png"
+import Logo from "../assets/icons/swiper2.png"
 
-import Up from "../assets/icons/up.png"
+import Up from "../assets/icons/swiper3.png"
 
 
 
@@ -212,7 +212,8 @@ export default class Swipe extends Component {
                     {
                         text: "Skip",
                         onPress: () => {
-                            this.swiper.current.goToNext()
+                            // this.swiper.current.goToNext()
+                            this.letsGo()
                         },
                         style: "cancel"
                     },
@@ -304,9 +305,9 @@ export default class Swipe extends Component {
     render() {
         return (
 
-            <SafeAreaView style={{ flex: 1, backgroundColor: "#62C7FB" }} >
+            <SafeAreaView style={{ flex: 1, backgroundColor: "white" }} >
 
-                <ImageBackground style={styles.container} source={Background}>
+                <View style={styles.container} source={Background}>
 
                     {/* swiper starts */}
 
@@ -320,9 +321,9 @@ export default class Swipe extends Component {
 
                                 DotComponent: ({ index, isActive, onPress, }) => {
                                     if (isActive) {
-                                        return <View style={{ height: 8, width: 22, backgroundColor: "#FFFFFF", borderRadius: 7.5, margin: 13 }}></View>;
+                                        return <View style={{ height: 8, width: 22, backgroundColor: "#a1863e", borderRadius: 7.5, margin: 13 }}></View>;
                                     }
-                                    return <View style={{ height: 7, width: 7, backgroundColor: "#FFFFFF", borderRadius: 3.5, margin: 13 }}></View>;
+                                    return <View style={{ height: 7, width: 7, backgroundColor: "#a1863e", borderRadius: 3.5, margin: 13 }}></View>;
                                 }
 
                             }}
@@ -333,43 +334,58 @@ export default class Swipe extends Component {
                                 <View style={{ alignItems: "center", justifyContent: "center" }}>
                                     <Image source={Logo} style={{ height: 250, width: 250, resizeMode: "contain" }} />
                                 </View>
-                                <Text style={{ color: "white", fontFamily: "Gotham-Black", fontSize: 21, textAlign: "left", marginHorizontal: 35, marginTop: 10 }}>Welcome to your Manifestation Journal!</Text>
+                                <Text style={{ color: "Black", fontFamily: "Gotham-Black", fontSize: 21, textAlign: "left", marginHorizontal: 35, marginTop: 10 }}>Welcome to Mu !</Text>
 
                                 <View style={{ paddingHorizontal: 40, marginTop: 15, marginBottom: 20 }}>
 
-                                    <View style={{ flexDirection: "row", alignItems: "center" }}>
-                                        <View style={{ height: 10, width: 10, borderRadius: 5, backgroundColor: "white" }}></View>
-                                        <Text style={{ color: "white", fontFamily: "Gotham-Light", textAlign: "left", }}>  Clarify and set goals.</Text>
-                                    </View>
+                                    {/* <View style={{ flexDirection: "row", alignItems: "center" }}>
+                                        <View style={{ height: 8, width: 8, borderRadius: 5, backgroundColor: "black" }}></View>
+                                        <Text style={{ color: "Black", fontFamily: "Gotham-Light", textAlign: "left", }}>  Clarify and set goals.</Text>
+                                    </View> */}
 
-                                    <View style={{ flexDirection: "row", alignItems: "center", marginTop: 8 }}>
-                                        <View style={{ height: 10, width: 10, borderRadius: 5, backgroundColor: "white" }}></View>
-                                        <Text style={{ color: "white", fontFamily: "Gotham-Light", textAlign: "left" }}>  Take actions towards your goals.</Text>
-                                    </View>
-
-
-                                    <View style={{ flexDirection: "row", alignItems: "center", marginTop: 8 }}>
-                                        <View style={{ height: 10, width: 10, borderRadius: 5, backgroundColor: "white" }}></View>
-                                        <Text style={{ color: "white", fontFamily: "Gotham-Light", textAlign: "left" }}>  Foster a positive mindset.</Text>
-                                    </View>
-
+                                    {/* <View style={{ flexDirection: "row", alignItems: "center", marginTop: 8 }}>
+                                        <View style={{ height: 8, width: 8, borderRadius: 5, backgroundColor: "black" }}></View>
+                                        <Text style={{ color: "Black", fontFamily: "Gotham-Light", textAlign: "left" }}>  Take actions towards your goals.</Text>
+                                    </View> */}
 
 
                                     <View style={{ flexDirection: "row", alignItems: "center", marginTop: 8 }}>
-                                        <View style={{ height: 10, width: 10, borderRadius: 5, backgroundColor: "white" }}></View>
-                                        <Text style={{ color: "white", fontFamily: "Gotham-Light", textAlign: "left" }}>  Promote gratitude and well-being.</Text>
+                                        <View style={{ height: 8, width: 8, borderRadius: 5, backgroundColor: "black" }}></View>
+                                        <Text style={{ color: "black", fontFamily: "Gotham-Light", textAlign: "left" }}>  Foster a positive mindset.</Text>
                                     </View>
+
 
 
                                     <View style={{ flexDirection: "row", alignItems: "center", marginTop: 8 }}>
-                                        <View style={{ height: 10, width: 10, borderRadius: 5, backgroundColor: "white" }}></View>
-                                        <Text style={{ color: "white", fontFamily: "Gotham-Light", textAlign: "left" }}>  Enhance motivation.</Text>
+                                        <View style={{ height: 8, width: 8, borderRadius: 5, backgroundColor: "black" }}></View>
+                                        <Text style={{ color: "Black", fontFamily: "Gotham-Light", textAlign: "left" }}>  Promote gratitude and well-being.</Text>
                                     </View>
+
+                                    <View style={{ flexDirection: "row", alignItems: "center", marginTop: 8 }}>
+                                        <View style={{ height: 8, width: 8, borderRadius: 5, backgroundColor: "black" }}></View>
+                                        <Text style={{ color: "Black", fontFamily: "Gotham-Light", textAlign: "left" }}>  Increase peace of mind.</Text>
+                                    </View>
+
+                                    <View style={{ flexDirection: "row", alignItems: "center", marginTop: 8 }}>
+                                        <View style={{ height: 8, width: 8, borderRadius: 5, backgroundColor: "black" }}></View>
+                                        <Text style={{ color: "Black", fontFamily: "Gotham-Light", textAlign: "left" }}>  Deepen connection to self and spirituality.</Text>
+                                    </View>
+
+                                    <View style={{ flexDirection: "row", alignItems: "center", marginTop: 8 }}>
+                                        <View style={{ height: 8, width: 8, borderRadius: 5, backgroundColor: "black" }}></View>
+                                        <Text style={{ color: "Black", fontFamily: "Gotham-Light", textAlign: "left" }}>  Gain clarity of mind.</Text>
+                                    </View>
+
+
+                                    {/* <View style={{ flexDirection: "row", alignItems: "center", marginTop: 8 }}>
+                                        <View style={{ height: 8, width: 8, borderRadius: 5, backgroundColor: "black" }}></View>
+                                        <Text style={{ color: "black", fontFamily: "Gotham-Light", textAlign: "left" }}>  Enhance motivation.</Text>
+                                    </View> */}
 
                                 </View>
 
-                                <TouchableOpacity onPress={this.nextButtonWelcomeSlide} style={{ backgroundColor: "white", width: 150, alignItems: "center", justifyContent: "center", height: 38, borderRadius: 5, alignSelf: "center", marginTop: 30 }}>
-                                    <Text style={{ color: "#4C84ED", fontFamily: "Gotham-Black" }}>Next</Text>
+                                <TouchableOpacity onPress={this.nextButtonWelcomeSlide} style={{ backgroundColor: "#a1863e", width: 150, alignItems: "center", justifyContent: "center", height: 38, borderRadius: 5, alignSelf: "center", marginTop: 30 }}>
+                                    <Text style={{ color: "white", fontFamily: "Gotham-Black" }}>Next</Text>
                                 </TouchableOpacity>
 
 
@@ -391,14 +407,14 @@ export default class Swipe extends Component {
 
                                         {/* <Image source={Swipe2} style={styles.swiperImage} /> */}
                                         <View style={{ paddingHorizontal: 20 }}>
-                                            <Text style={{ color: "white", fontFamily: "Gotham-Black", fontSize: 21, textAlign: "center", marginTop: 20 }}>First let's clarify your vision</Text>
-                                            <View style={[{ minHeight: 80, backgroundColor: "#5FBAF8", marginTop: 30, borderRadius: 6, padding: 20, }, styles.shadow]}>
-                                                <Text style={{ color: "#f2f2f2", fontFamily: "Gotham-Black", fontSize: 17 }}>Goal title</Text>
+                                            <Text style={{ color: "Black", fontFamily: "Gotham-Black", fontSize: 21, textAlign: "center", marginTop: 20 }}>First let's clarify your vision</Text>
+                                            <View style={[{ minHeight: 80, backgroundColor: "white", marginTop: 30, borderRadius: 6, padding: 20, }, styles.shadow]}>
+                                                <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 17 }}>Goal title</Text>
                                                 {/* <View style={{height:37, marginTop: 10,}}> */}
                                                 <TextInput
-                                                    style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "white", borderRadius: 4, paddingLeft: 10, fontSize: 14, color: "white", marginTop: 5 }}
+                                                    style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "#737373", borderRadius: 4, paddingLeft: 10, fontSize: 14, color: "white", marginTop: 5 }}
                                                     placeholder='I will loose 5 pounds'
-                                                    placeholderTextColor="#f2f2f2"
+                                                    placeholderTextColor="#737373"
                                                     onChangeText={(text) => { this.setState({ goalTitle: text }) }}
                                                 />
                                                 {/* </View> */}
@@ -407,16 +423,16 @@ export default class Swipe extends Component {
 
 
 
-                                            <View style={[{ minHeight: 100, backgroundColor: "#5FBAF8", marginTop: 10, borderRadius: 6, padding: 20, marginTop: 20 }, styles.shadow]}>
-                                                <Text style={{ color: "white", fontFamily: "Gotham-Black", fontSize: 17 }}>What would you like to manifest in the next {this.state.numberOfDays} days:</Text>
+                                            <View style={[{ minHeight: 100, backgroundColor: "white", marginTop: 10, borderRadius: 6, padding: 20, marginTop: 20 }, styles.shadow]}>
+                                                <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 17 }}>What would you like to manifest in the next {this.state.numberOfDays} days:</Text>
 
-                                                <Text style={{ color: "white", fontFamily: "Gotham-Light", fontSize: 12, marginTop: 15, fontWeight: "500" }}>End date of goal:</Text>
+                                                <Text style={{ color: "black", fontFamily: "Gotham-Light", fontSize: 12, marginTop: 15, fontWeight: "500" }}>End date of goal:</Text>
                                                 <TouchableOpacity onPress={this.showEndDatePicker}>
 
                                                     <TextInput
-                                                        style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "#f2f2f2", borderRadius: 4, marginTop: 5, paddingLeft: 10, fontSize: 11, color: "white" }}
+                                                        style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "#737373", borderRadius: 4, marginTop: 5, paddingLeft: 10, fontSize: 11, color: "black" }}
                                                         placeholder="Choose date"
-                                                        placeholderTextColor="#f2f2f2"
+                                                        placeholderTextColor="#737373"
                                                         onTouchStart={this.showEndDatePicker}
                                                         editable={false}
                                                         value={this.state.goalEndDate}
@@ -427,20 +443,20 @@ export default class Swipe extends Component {
 
 
 
-                                            <View style={[{ minHeight: 80, backgroundColor: "#5FBAF8", marginTop: 20, borderRadius: 6, padding: 20, }, styles.shadow]}>
-                                                <Text style={{ color: "#f2f2f2", fontFamily: "Gotham-Black", fontSize: 17 }}>Write one goal you want the most</Text>
+                                            <View style={[{ minHeight: 80, backgroundColor: "white", marginTop: 20, borderRadius: 6, padding: 20, }, styles.shadow]}>
+                                                <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 17 }}>Write one goal you want the most</Text>
                                                 <TextInput
-                                                    style={{ height: 95, width: "100%", borderWidth: 0.5, borderColor: "white", borderRadius: 4, marginTop: 10, paddingLeft: 10, fontSize: 14, color: "white" }}
+                                                    style={{ height: 95, width: "100%", borderWidth: 0.5, borderColor: "#737373", borderRadius: 4, marginTop: 10, paddingLeft: 10, fontSize: 14, color: "black" }}
                                                     placeholder='ex: "I weigh__lbs"'
-                                                    placeholderTextColor="#f2f2f2"
+                                                    placeholderTextColor="#737373"
                                                     multiline={true}
                                                     onChangeText={(text) => { this.setState({ goalStatement: text }) }}
                                                 />
-                                                <Text style={{ color: "white", fontSize: 12, textAlign: "right", marginTop: 5, fontStyle: "italic" }}>Tip: Ensure it's specific and attainable!</Text>
+                                                <Text style={{ color: "black", fontSize: 12, textAlign: "right", marginTop: 5, fontStyle: "italic" }}>Tip: Ensure it's specific and attainable!</Text>
                                             </View>
 
-                                            <TouchableOpacity onPress={this.nextButtonForDateSlide} style={{ backgroundColor: "white", width: 150, alignItems: "center", justifyContent: "center", height: 38, borderRadius: 5, alignSelf: "center", marginTop: 20 }}>
-                                                <Text style={{ color: "#4C84ED", fontFamily: "Gotham-Black" }}>Next</Text>
+                                            <TouchableOpacity onPress={this.nextButtonForDateSlide} style={{ backgroundColor: "#a1863e", width: 150, alignItems: "center", justifyContent: "center", height: 38, borderRadius: 5, alignSelf: "center", marginTop: 20 }}>
+                                                <Text style={{ color: "white", fontFamily: "Gotham-Black" }}>Next</Text>
                                             </TouchableOpacity>
 
                                         </View>
@@ -459,25 +475,25 @@ export default class Swipe extends Component {
 
 
 
-                            <View style={[styles.swiperimageContainer, { marginTop: "20%" }]}>
-                                {/* <Image source={Swipe3} style={[styles.swiperImage]} /> */}
+                            {/* <View style={[styles.swiperimageContainer, { marginTop: "20%" }]}>
+                                <Image source={Swipe3} style={[styles.swiperImage]} />
 
 
                                 <View style={{ alignItems: "center", justifyContent: "center" }}>
                                     <Image source={Up} style={{ height: 250, width: 250, resizeMode: "contain" }} />
                                 </View>
 
-                                <Text style={{ color: "white", fontFamily: "Gotham-Black", fontSize: 21, textAlign: "center", marginTop: 10, marginHorizontal: 20 }}>Great ! Your __day manifetation starts now!</Text>
+                                <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 21, textAlign: "center", marginTop: 10, marginHorizontal: 20 }}>Great ! Your __day manifetation starts now!</Text>
 
-                                <Text style={{ color: "white", fontSize: 16, textAlign: "center", marginTop: 5, fontStyle: "italic", marginTop: 30 }}>"The journey of thousand miles begins with one step."</Text>
-                                <Text style={{ color: "white", fontSize: 18, textAlign: "center", marginTop: 5, fontStyle: "italic", marginTop: 10, fontWeight: "bold" }}>" - Lao Tzu"</Text>
-                                <Text style={{ color: "white", fontSize: 16, textAlign: "center", marginTop: 5, fontStyle: "italic", marginTop: 60 }}>Let's start by creating your first entry!</Text>
+                                <Text style={{ color: "black", fontSize: 16, textAlign: "center", marginTop: 5, fontStyle: "italic", marginTop: 30 }}>"The journey of thousand miles begins with one step."</Text>
+                                <Text style={{ color: "black", fontSize: 18, textAlign: "center", marginTop: 5, fontStyle: "italic", marginTop: 10, fontWeight: "bold" }}>" - Lao Tzu"</Text>
+                                <Text style={{ color: "black", fontSize: 16, textAlign: "center", marginTop: 5, fontStyle: "italic", marginTop: 60 }}>Let's start by creating your first entry!</Text>
 
-                                <TouchableOpacity onPress={() => { this.letsGo() }} style={{ backgroundColor: "white", width: 150, alignItems: "center", justifyContent: "center", height: 38, borderRadius: 5, alignSelf: "center", marginTop: 20 }}>
-                                    <Text style={{ color: "#4C84ED", fontFamily: "Gotham-Black" }}>Let's Go!</Text>
+                                <TouchableOpacity onPress={() => { this.letsGo() }} style={{ backgroundColor: "#a1863e", width: 150, alignItems: "center", justifyContent: "center", height: 38, borderRadius: 5, alignSelf: "center", marginTop: 20 }}>
+                                    <Text style={{ color: "white", fontFamily: "Gotham-Black" }}>Let's Go!</Text>
                                 </TouchableOpacity>
 
-                            </View>
+                            </View> */}
 
 
 
@@ -497,7 +513,7 @@ export default class Swipe extends Component {
 
 
 
-                </ImageBackground>
+                </View>
 
 
 

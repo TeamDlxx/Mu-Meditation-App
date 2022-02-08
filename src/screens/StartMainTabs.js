@@ -47,8 +47,8 @@ allTabsroot={
                 // icon: require('../assets/icons/audio.png'),
                 icon: require('../assets/icons/icon_home.png'),
                 testID: 'SECOND_TAB_BAR_BUTTON',
-                selectedIconColor: '#497CF0',
-                selectedTextColor: '#497CF0',
+                selectedIconColor: '#a1863e',
+                selectedTextColor: '#a1863e',
                 textColor: '#778187',
                 // badge: '200',
                 fontSize: 12,
@@ -58,34 +58,34 @@ allTabsroot={
           }
         },
         
-        {
-          stack: {
-            children: [{
-              component: {
-                name: 'poisedAthleteMeditation.JournalScreen',
-                passProps: {
-                  text: 'This is tab 1'
-                },
+        // {
+        //   stack: {
+        //     children: [{
+        //       component: {
+        //         name: 'poisedAthleteMeditation.JournalScreen',
+        //         passProps: {
+        //           text: 'This is tab 1'
+        //         },
                 
-              }
-            }],
-            options: {
-              bottomTab: {
+        //       }
+        //     }],
+        //     options: {
+        //       bottomTab: {
                
-                text: 'Journal',
-                      icon: require('../assets/icons/journal.png'),
-                      // icon: require('../assets/icons/favoriteIcon.png'),
-                      testID: 'FIRST_TAB_BAR_BUTTON',
-                      selectedIconColor: '#497CF0',
-                      selectedTextColor: '#497CF0',
-                      textColor: '#778187',
-                      fontSize: 12,
-                      iconInsets: { top: 5, bottom: -0, },
+        //         text: 'Journal',
+        //               icon: require('../assets/icons/journal.png'),
+        //               // icon: require('../assets/icons/favoriteIcon.png'),
+        //               testID: 'FIRST_TAB_BAR_BUTTON',
+        //               selectedIconColor: '#497CF0',
+        //               selectedTextColor: '#497CF0',
+        //               textColor: '#778187',
+        //               fontSize: 12,
+        //               iconInsets: { top: 5, bottom: -0, },
 
-              }
-            }
-          }
-        },
+        //       }
+        //     }
+        //   }
+        // },
       
         
         {
@@ -109,8 +109,8 @@ allTabsroot={
                 icon: require('../assets/icons/audio.png'),
                 // icon: require('../assets/icons/icon_home.png'),
                 testID: 'SECOND_TAB_BAR_BUTTON',
-                selectedIconColor: '#497CF0',
-                selectedTextColor: '#497CF0',
+                selectedIconColor: '#a1863e',
+                selectedTextColor: '#a1863e',
                 textColor: '#778187',
                 // badge: '200',
                 fontSize: 12,
@@ -140,8 +140,8 @@ allTabsroot={
               icon: require('../assets/icons/icon_settings.png'),
               // icon: require('../assets/icons/settingsIcon.png'),
               testID: 'FOURTH_TAB_BAR_BUTTON',
-              selectedIconColor: '#497CF0',
-            selectedTextColor: '#497CF0',
+              selectedIconColor: '#a1863e',
+            selectedTextColor: '#a1863e',
             textColor: '#778187',
             fontSize: 12,  
             iconInsets: { top: 5, bottom: -0, },

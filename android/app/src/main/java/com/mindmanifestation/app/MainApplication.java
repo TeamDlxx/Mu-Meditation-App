@@ -1,4 +1,4 @@
-package com.mindmanifestation.app;
+package com.mumeditation.app;
 
 import com.guichaguri.trackplayer.TrackPlayer;
 import com.facebook.react.ReactNativeHost;
