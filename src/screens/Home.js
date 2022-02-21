@@ -71,6 +71,7 @@ import {
     ImageBackground
 
 } from 'react-native';
+import {Image as Imagee} from 'react-native-elements';
 
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -98,7 +99,10 @@ export default class Home extends Component {
             goalStatement: "",
             numberOfDays: "",
             goal: "",
-            featuredAudio: ""
+            featuredAudio: "",
+            track_type:'',
+            video_url:'',
+
 
         }
 
@@ -353,6 +357,9 @@ export default class Home extends Component {
             "songDuration": this.state.featuredAudio.featured_audio_file_duration,
             "songUrl": this.state.featuredAudio.featured_audio_file_url,
             "status": this.state.featuredAudio.status,
+            'track_type': "audio",
+            'video_url': "https://vimeo.com/253989945",
+
         }
 
         Navigation.push(this.props.componentId, {
@@ -423,7 +430,15 @@ export default class Home extends Component {
                     <View style={{ width: "35%", padding: 3, flexDirection: "row", }}>
                         <View style={{ flexDirection: "row", alignItems: 'center', justifyContent: 'center' }}>
                             <View style={{ backgroundColor: "#4F8AEF", padding: 5, borderRadius: 14.5, height: 25, width: 25, alignItems: "center", justifyContent: "center", marginRight: 3, }}>
-                                <Image source={item.server_item === true ? { uri: domain + item.feel_action_icon } : Leaves} resizeMode='contain' style={{ width: 15, height: 15, borderRadius: 50, }} />
+                                <Imagee
+                                PlaceholderContent={
+                                    <ActivityIndicator
+                                      animating={true}
+                                      size="small"
+                                      color={'#D2A33A'}
+                                    />
+                                  }
+                                 source={item.server_item === true ? { uri: domain + item.feel_action_icon } : Leaves} resizeMode='contain' style={{ width: 15, height: 15, borderRadius: 50, }} ></Imagee>
                             </View>
                             <Text style={{ fontSize: 12, color: "#969DAF", fontWeight: '300', paddingLeft: 4 }}>{item.feel_action_title}</Text>
                         </View>
@@ -454,7 +469,15 @@ export default class Home extends Component {
                     <View style={{ width: "35%", padding: 3, flexDirection: "row", }}>
                         <View style={{ flexDirection: "row", alignItems: 'center', justifyContent: 'center' }}>
                             <View style={{ backgroundColor: "#4F8AEF", padding: 5, borderRadius: 14.5, height: 25, width: 25, alignItems: "center", justifyContent: "center", marginRight: 3, }}>
-                                <Image source={item.server_item === true ? { uri: domain + item.burning_desire_icon } : Leaves} resizeMode='contain' style={{ width: 15, height: 15, borderRadius: 50, }} />
+                            <Imagee
+                                PlaceholderContent={
+                                    <ActivityIndicator
+                                      animating={true}
+                                      size="small"
+                                      color={'#D2A33A'}
+                                    />
+                                  }
+                                source={item.server_item === true ? { uri: domain + item.burning_desire_icon } : Leaves} resizeMode='contain' style={{ width: 15, height: 15, borderRadius: 50, }} />
                             </View>
                             <Text style={{ fontSize: 12, color: "#969DAF", fontWeight: '300', paddingLeft: 4 }}>{item.burning_desire_title}</Text>
                         </View>
@@ -482,7 +505,15 @@ export default class Home extends Component {
                     <View style={{ width: "35%", padding: 3, flexDirection: "row", }}>
                         <View style={{ flexDirection: "row", alignItems: 'center', justifyContent: 'center' }}>
                             <View style={{ backgroundColor: "#4F8AEF", borderRadius: 14.5, height: 25, width: 25, alignItems: "center", justifyContent: "center", marginRight: 3, }}>
-                                <Image source={item.server_item === true ? { uri: domain + item.burning_desire_icon } : Leaves} resizeMode='contain' style={{ width: 15, height: 15, borderRadius: 50, }} />
+                            <Imagee
+                                PlaceholderContent={
+                                    <ActivityIndicator
+                                      animating={true}
+                                      size="small"
+                                      color={'#D2A33A'}
+                                    />
+                                  }
+                                source={item.server_item === true ? { uri: domain + item.burning_desire_icon } : Leaves} resizeMode='contain' style={{ width: 15, height: 15, borderRadius: 50, }} />
 
                             </View>
                             <Text style={{ fontSize: 12, color: "#969DAF", fontWeight: '300', paddingLeft: 4 }}>{item.burning_desire_title}</Text>
@@ -712,8 +743,8 @@ export default class Home extends Component {
                                     <View style={{ flexDirection: "row", alignItems: "center" }}>
                                         <Image source={GoalIcon} style={{ height: 28, width: 28, resizeMode: "contain",tintColor:'#a1863e' }} />
                                         <View style={{ marginLeft: 10 }}>
-                                            <Text style={{ fontSize: 18, fontFamily: "Gotham-Bold", alignItems: "center", }}>Current Goal</Text>
-                                            <Text style={{ fontSize: 12, fontFamily: "Gotham-Light", marginTop: 5, }}>You have not set your goal yet, Tap to add now.</Text>
+                                            <Text style={{ fontSize: 18, fontFamily: "Gotham-Bold", alignItems: "center", }}>Daily Intention</Text>
+                                            <Text style={{ fontSize: 12, fontFamily: "Gotham-Light", marginTop: 5, }}>An intention gives direction.Set it yours for today here.</Text>
                                         </View>
                                     </View>
                                     <View style={{ backgroundColor: "#a1863e", alignItems: "center", justifyContent: "center", borderRadius: 5, height: 35, marginTop: 25 }}>
@@ -765,7 +796,15 @@ export default class Home extends Component {
                                         height: 85
                                     }}>
 
-                                        <Image source={{ uri: domain + this.state.featuredAudio.featured_image_url }} style={{ height: 57, width: 67, borderRadius: 12 }} />
+                                   <Imagee
+                                PlaceholderContent={
+                                    <ActivityIndicator
+                                      animating={true}
+                                      size="small"
+                                      color={'#D2A33A'}
+                                    />
+                                  }
+                                        source={{ uri: domain + this.state.featuredAudio.featured_image_url }} style={{ height: 57, width: 67, borderRadius: 12 }} />
 
                                     </View>
 

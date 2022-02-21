@@ -21,7 +21,9 @@ import TrackPlayer from "react-native-track-player";
 import righticon from "./src/assets/icons/rightRound.png"
 import AsyncStorage from '@react-native-community/async-storage';
 
-let startScreen = "";
+let startScreen = "IntroSwiperScreen";
+// let startScreen = "LoginScreen";
+
 // let startScreen = "Swiper";
 // let startScreen = "testScreen";
 // let startScreen = "playScreen"
@@ -64,6 +66,10 @@ TrackPlayer.setupPlayer({waitForBuffer: false}).then(() => {
         drawBehind: true,
         animated: true
       },
+      statusBar: {
+        backgroundColor: '#a1863e',
+        style:"dark-content",
+      },
 
     
     });
@@ -76,12 +82,23 @@ TrackPlayer.setupPlayer({waitForBuffer: false}).then(() => {
 
 
  let firestTimeUser = JSON.parse(await AsyncStorage.getItem('FirstTimeUser'));
+ let isLogin = JSON.parse(await AsyncStorage.getItem('isLogin'));
 
 
 
  if(firestTimeUser == "" || firestTimeUser == null || firestTimeUser == undefined){
-   startScreen = "Swiper"
+  //  startScreen = "Swiper"
+   startScreen = "IntroSwiperScreen"
+
+   
  }
+ if(isLogin == "" || isLogin == null || isLogin == undefined){
+  //  startScreen = "Swiper"
+   startScreen = "LoginScreen"
+
+   
+ }
+ 
 
 
     if (startScreen === "") {

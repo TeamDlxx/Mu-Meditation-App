@@ -23,7 +23,8 @@ import {
   Alert,
   Keyboard,
   Platform,
-  Dimensions
+  Dimensions,
+  ActivityIndicator,
 } from 'react-native';
 
 
@@ -61,6 +62,8 @@ import AsyncStorage from "@react-native-community/async-storage"
 import DeviceInfo from 'react-native-device-info'
 
 import { domain } from "../components/utilities"
+import {Image as Imagee} from 'react-native-elements';
+
 
 const MyStatusBar = ({ backgroundColor, ...props }) => (
   <View style={[styles.statusBar, { backgroundColor }]}>
@@ -652,7 +655,14 @@ export default class ActionsScreen extends Component {
                         {/* check icon */}
 
                         <View style={{ flex: 7, justifyContent: "flex-end", padding: 13 }}>
-                          <Image source={{ uri: domain + item.feel_action_icon }} style={{ height: 20, width: 20, resizeMode: "contain" }} />
+                          <Imagee 
+                         PlaceholderContent={
+                        <ActivityIndicator
+                          animating={true}
+                          size="small"
+                          color={'#D2A33A'}
+                        />
+                      } source={{ uri: domain + item.feel_action_icon }} style={{ height: 20, width: 20, resizeMode: "contain" }} ></Imagee>
                           <Text style={{ color: "white", marginTop: 5, fontSize: 13 }}>{item.feel_action_title}</Text>
                         </View>
                       </View>

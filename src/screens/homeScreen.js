@@ -17,6 +17,8 @@ import RNFetchBlob from "rn-fetch-blob";
 import { domain, app_id } from '../components/utilities'
 import firebase from "react-native-firebase";
 import startMainTabs from "../screens/StartMainTabs";
+import {Image as Imagee} from 'react-native-elements';
+
 let MYTRACKS = [];
 
 import {
@@ -34,6 +36,7 @@ import {
     TouchableHighlight,
     TouchableWithoutFeedback,
     ActivityIndicator,
+    RefreshControl,
 
 } from 'react-native';
 
@@ -128,11 +131,20 @@ export default class HomeScreen extends Component {
             termOfUseStringstate: "",
             favouritesTabSelected: false,
             favoriteTracks: [],
-            currentItem: ""
+            currentItem: "",
+            refresh:false,
 
         }
 
     }
+
+    wait = async(timeout) => {
+        return new Promise(resolve => setTimeout(resolve, timeout));
+      }
+       onRefresh =()=> React.useCallback(() => {
+        this.setState({refresh:true});
+        this.wait(2000).then(() => this.setState({refresh:false}));
+      }, []);
 
     refresh = async () => {
         this.setState({ isAnimating: true, isDisabled: true })
@@ -794,8 +806,7 @@ export default class HomeScreen extends Component {
 
 
     playTrackFunction = (item) => {
-
-
+        console.log(item,'Item Item')
 
 
         if (this.state.purchase === "" && item.lock === true) {
@@ -1014,7 +1025,7 @@ export default class HomeScreen extends Component {
                     <TouchableWithoutFeedback onPress={this.playListFunction}  >
                         <View>
                             <Text style={[(this.state.playLIst == true) ? { fontSize: 18, fontWeight: "bold", color: "#a1863e" } : { fontSize: 16 }, { flexDirection: "column", fontFamily: 'Gotham-Light' }]}>
-                                Playlist
+                                Menu
                                     </Text>
 
                             {
@@ -1025,7 +1036,7 @@ export default class HomeScreen extends Component {
 
                     </TouchableWithoutFeedback>
 
-                    <TouchableWithoutFeedback onPress={this.allTracksFunction} >
+                    {/* <TouchableWithoutFeedback onPress={this.allTracksFunction} >
                         <View>
                             <Text style={[(this.state.allTracks == true) ? { fontSize: 18, fontWeight: "bold", color: "#a1863e" } : { fontSize: 16 }, { flexDirection: "column", fontFamily: 'Gotham-Light', }]}>
                                 All Tracks
@@ -1035,14 +1046,14 @@ export default class HomeScreen extends Component {
                                 <Text style={{ marginTop: -8, color: "#a1863e", fontWeight: "bold", textAlign: "center", paddingLeft: 11 }}>___</Text>
                             }
                         </View>
-                    </TouchableWithoutFeedback>
+                    </TouchableWithoutFeedback> */}
 
 
 
                     <TouchableWithoutFeedback onPress={this.favouritesTab} >
                         <View>
                             <Text style={[(this.state.favouritesTabSelected == true) ? { fontSize: 18, fontWeight: "bold", color: "#a1863e" } : { fontSize: 16 }, {flexDirection: "column", fontFamily: 'Gotham-Light', }]}>
-                                Favourites
+                                Favorites
                                     </Text>
                             {
                                 this.state.favouritesTabSelected == true &&
@@ -1119,6 +1130,14 @@ export default class HomeScreen extends Component {
                         <View style={{ flex: 7, paddingTop: 15 }}>
 
                             <FlatList
+                            refreshControl={
+                                <RefreshControl
+                                  refreshing={this.state.refresh}
+                                  onRefresh={this.fetchPlaylists}
+                                  enabled={true}
+                                  colors={["#a1863e","#a1863e"]}/>
+                                  }
+
                                 showsVerticalScrollIndicator={false}
                                 data={this.state.playLists}
                                 style={{ marginBottom: this.state.marginFromBottom }}
@@ -1141,7 +1160,16 @@ export default class HomeScreen extends Component {
 
                                                 }}>
 
-                                                    <Image source={(this.state.isInternetConnected === true) ? { uri: domain + item.img_url } : require('../assets/icons/music_icon.jpg')} style={{ height: 80, width: 95, borderRadius: 12, }} />
+                                                    <Imagee
+                                                    PlaceholderContent={
+                                                        <ActivityIndicator
+                                                            animating={true}
+                                                            size="small"
+                                                            color={'#D2A33A'}
+                                                        />
+                                                        }
+                                                     
+                                                    source={(this.state.isInternetConnected === true) ? { uri: domain + item.img_url } : require('../assets/icons/music_icon.jpg')} style={{ height: 80, width: 95, borderRadius: 12, }} />
                                                     {/* <Image resizeMode="stretch" source={(this.state.isInternetConnected === true)?{ uri:domain+item.img_url}:{uri:domain+item.img_url}} style={{height: 80, width: 95, borderRadius: 12, }} /> */}
 
                                                 </View>
@@ -1163,7 +1191,7 @@ export default class HomeScreen extends Component {
 
                         {console.log(this.state.purchase, "purchase is...")}
 
-                        {this.state.purchase === "" &&
+                        {/* {this.state.purchase === "" &&
 
 
                             <View style={{ flex: this.state.flexValue, alignItems: "center", paddingTop: 10 }}>
@@ -1193,7 +1221,7 @@ export default class HomeScreen extends Component {
                             </View>
 
 
-                        }
+                        } */}
 
 
 
@@ -1254,6 +1282,15 @@ export default class HomeScreen extends Component {
                             <View style={{ flex: 5, paddingLeft: 12 }}>
 
                                 <FlatList
+                                    refreshControl={
+                                        <RefreshControl
+                                        refreshing={this.state.refresh}
+                                        onRefresh={this.fetchAllTracks}
+                                        enabled={true}
+                                        colors={["#a1863e","#a1863e"]}/>
+                                        }
+
+                                
                                     showsVerticalScrollIndicator={false}
                                     style={{ marginTop: 7, marginBottom: this.state.marginFromBottom }}
                                     data={this.state.Tracks}
@@ -1263,7 +1300,7 @@ export default class HomeScreen extends Component {
 
                                         return (
 
-                                            <TouchableOpacity onPress={() => { this.playTrackFunction(item) }} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", paddingVertical:5 }}>
+                                            <TouchableOpacity onPress={() => { this.playTrackFunction(item) }} style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", paddingVertical:5, }}>
 
                                                 <View style={{
                                                     shadowColor: 'gray',
@@ -1274,9 +1311,19 @@ export default class HomeScreen extends Component {
                                                     alignItems: "center",
                                                     justifyContent: "center",
                                                     minHeight: 85,
+                                                    
                                                 }}>
 
-                                                    <Image resizeMode="stretch" source={(this.state.isInternetConnected === true) ? { uri: domain + item.imgUrl } : require('../assets/icons/music_icon.jpg')} style={{ height: 57, width: 67, borderRadius: 12, marginTop:-20 }} />
+                                                    <Imagee
+                                                    PlaceholderContent={
+                                                        <ActivityIndicator
+                                                            animating={true}
+                                                            size="small"
+                                                            color={'#D2A33A'}
+                                                        />
+                                                        }
+                                                    
+                                                     source={(this.state.isInternetConnected === true) ? { uri: domain + item.imgUrl } : require('../assets/icons/music_icon.jpg')} style={{ height: 57, width: 67, borderRadius: 12, }} />
 
                                                 </View>
 
@@ -1332,7 +1379,7 @@ export default class HomeScreen extends Component {
                                     backgroundColor: "#0000",
                                 }}
                                 >
-                                    <TouchableOpacity onPress={this.UpgradeFunction} style={{ alignItems: "center", width: "85%", borderRadius: 30, padding: 10, backgroundColor: "#a1863e", flexDirection: "row", justifyContent: "space-between", height: 55 }}>
+                                    <TouchableOpacity onPress={this.UpgradeFunction} style={{ alignItems: "center", width: "85%", borderRadius: 30, padding: 10, backgroundColor: "#a1863e" , flexDirection: "row", justifyContent: "space-between", height: 55 }}>
                                         <Text style={{ color: "white", padding: 5, fontWeight: "bold", fontSize: 18, fontFamily: 'Gotham-Bold', marginLeft: 13 }}>Join the Membership</Text>
 
                                         <TouchableOpacity onPress={this.UpgradeFunction} style={{ paddingLeft: 12, paddingRight: 12, borderRadius: 15, backgroundColor: "white", padding: 8, alignItems: "center", justifyContent: "center" }}>

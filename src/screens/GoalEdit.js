@@ -474,7 +474,7 @@ export default class GoalDetail extends Component {
                                             <Text style={{ color: "black", fontFamily: "Gotham-Black", fontSize: 14 }}>What do you want to embody today?</Text>
                                             <TextInput
                                                 style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "#737373", borderRadius: 4, marginTop: 10, paddingLeft: 10, fontSize: 14, color: "black" }}
-                                                placeholder='I will loose 5 pounds'
+                                                placeholder='Peace'
                                                 placeholderTextColor="#737373"
                                                 value={this.state.goalTitle}
                                                 onChangeText={(text) => { this.setState({ goalTitle: text }) }}

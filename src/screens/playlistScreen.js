@@ -28,6 +28,7 @@ import { Navigation } from 'react-native-navigation';
 
 import AsyncStorage from '@react-native-community/async-storage';
 
+import {Image as Imagee} from 'react-native-elements';
 
 import firebase from "react-native-firebase";
 
@@ -121,7 +122,7 @@ export default class HomeScreen extends Component{
 
 
     playTrackFunction = (item) =>{
-        
+        console.log(item,'Item Item')
         if(this.state.purchase === "" && item.lock === true){
             Navigation.push(this.props.componentId, {
                 component: {
@@ -256,7 +257,16 @@ export default class HomeScreen extends Component{
                 minHeight:85
             }}>
 
-            <Image source={(this.props.connected === false)?require('../assets/icons/music_icon.jpg'):{uri:domain+item.imgUrl}} style={{height: 57, width: 67, borderRadius: 12, marginTop:-20}} />
+            <Imagee
+            PlaceholderContent={
+                <ActivityIndicator
+                    animating={true}
+                    size="small"
+                    color={'#D2A33A'}
+                />
+                }
+                                                     
+            source={(this.props.connected === false)?require('../assets/icons/music_icon.jpg'):{uri:domain+item.imgUrl}} style={{height: 57, width: 67, borderRadius: 12,}} />
 
             </View>
             
@@ -292,7 +302,7 @@ export default class HomeScreen extends Component{
     }
 
     </View>
-    {this.state.purchase === "" && 
+    {/* {this.state.purchase === "" && 
         <View style={{flex:this.state.flexValue}}>
 
       
@@ -323,7 +333,7 @@ export default class HomeScreen extends Component{
         </View>
        
 
-        }
+        } */}
     </View>
 
 

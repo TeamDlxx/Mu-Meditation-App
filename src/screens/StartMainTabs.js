@@ -10,7 +10,7 @@ const startTabs = () => {
     layout:{
       orientation:["portrait"]
     },
-    statusBar:{backgroundColor:"white", style : "dark"},
+    statusBar:{backgroundColor:"#a1863e", style : "dark-content"},
 
         topBar: {
           visible: false,
@@ -26,37 +26,37 @@ allTabsroot={
     bottomTabs: {
       children: [
 
-        {
-          stack: {
-            children: [{
-              component: {
-                name: 'poisedAthleteMeditation.Home',
-                passProps: {
-                  text: 'This is tab 2'
-                },
+        // {
+        //   stack: {
+        //     children: [{
+        //       component: {
+        //         name: 'poisedAthleteMeditation.Home',
+        //         passProps: {
+        //           text: 'This is tab 2'
+        //         },
                 
-              }
-            }],
-            options: {
-              bottomTab: {
-                text: 'Home',
+        //       }
+        //     }],
+        //     options: {
+        //       bottomTab: {
+        //         text: 'Home',
 
-                // icon: require('../assets/icons/homeIcon.png'),
+        //         // icon: require('../assets/icons/homeIcon.png'),
 
-                // iconInsets: { top: 5, bottom: -5, },
-                // icon: require('../assets/icons/audio.png'),
-                icon: require('../assets/icons/icon_home.png'),
-                testID: 'SECOND_TAB_BAR_BUTTON',
-                selectedIconColor: '#a1863e',
-                selectedTextColor: '#a1863e',
-                textColor: '#778187',
-                // badge: '200',
-                fontSize: 12,
-                iconInsets: { top: 5, bottom: -0, },
-              }
-            }
-          }
-        },
+        //         // iconInsets: { top: 5, bottom: -5, },
+        //         // icon: require('../assets/icons/audio.png'),
+        //         icon: require('../assets/icons/icon_home.png'),
+        //         testID: 'SECOND_TAB_BAR_BUTTON',
+        //         selectedIconColor: '#a1863e',
+        //         selectedTextColor: '#a1863e',
+        //         textColor: '#778187',
+        //         // badge: '200',
+        //         fontSize: 12,
+        //         iconInsets: { top: 5, bottom: -0, },
+        //       }
+        //     }
+        //   }
+        // },
         
         // {
         //   stack: {
@@ -101,12 +101,12 @@ allTabsroot={
             }],
             options: {
               bottomTab: {
-                text: 'Audio',
+                text: 'Rituals & Recipes',
 
                 // icon: require('../assets/icons/homeIcon.png'),
 
                 // iconInsets: { top: 5, bottom: -5, },
-                icon: require('../assets/icons/audio.png'),
+                icon:require('../assets/icons/recipie.png'),
                 // icon: require('../assets/icons/icon_home.png'),
                 testID: 'SECOND_TAB_BAR_BUTTON',
                 selectedIconColor: '#a1863e',

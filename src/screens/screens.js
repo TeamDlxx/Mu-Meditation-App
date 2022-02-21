@@ -25,31 +25,20 @@ import GrateFullForTodayScreen from '../screens/GrateFullForTodayScreen'
 import ServeUniverseScreen from '../screens/ServeUniverseScreen'
 import ActionsScreen from '../screens/ActionsScreen'
 import HowsDayScreen from '../screens/HowsDayScreen'
-
 import HowsMyMoodScreen from '../screens/HowsMyMoodScreen'
-
 import AddNewActionScreen from '../screens/AddNewActionScreen'
-
 import ExperienceYourBurningDesiresScreen from '../screens/ExperienceYourBurningDesiresScreen'
-
 import FinishScreen from '../screens/FinishScreen'
-
 import MenifestDetailScreen from '../screens/MenifestDetailScreen'
-
 import TickCompletedActions from '../screens/tickCompletedActions'
-
-
-
 import Swiper from '../screens/Swiper'
-
 import Home from '../screens/Home'
-
 import GoalEdit from './GoalEdit'
-
 import GoalsListing from '../screens/GoalsListing'
-
 import GoalDetail from '../screens/GoalDetail'
-
+import LoginScreen from '../screens/LoginScreen'
+import IntroSwiperScreen from '../screens/IntroSwiperScreen'
+import ForgotPasswordScreen from '../screens/ForgotPasswordScreen'
 
 
 
@@ -84,35 +73,24 @@ export function registerScreens() {
     Navigation.registerComponent('poisedAthleteMeditation.ServeUniverseScreen', () => ServeUniverseScreen);
     Navigation.registerComponent('poisedAthleteMeditation.ActionsScreen', () => ActionsScreen);
     Navigation.registerComponent('poisedAthleteMeditation.HowsDayScreen', () => HowsDayScreen);
-
     Navigation.registerComponent('poisedAthleteMeditation.HowsMyMoodScreen', () => HowsMyMoodScreen);
-
     Navigation.registerComponent('poisedAthleteMeditation.AddNewActionScreen', () => AddNewActionScreen);
-
     Navigation.registerComponent('poisedAthleteMeditation.ExperienceYourBurningDesiresScreen', () => ExperienceYourBurningDesiresScreen );
     Navigation.registerComponent('poisedAthleteMeditation.FinishScreen', () => FinishScreen );
-
     Navigation.registerComponent('poisedAthleteMeditation.MenifestDetailScreen', () => MenifestDetailScreen );
-
-
     Navigation.registerComponent('poisedAthleteMeditation.TickCompletedActions', () => TickCompletedActions );
-
-
     Navigation.registerComponent('poisedAthleteMeditation.Swiper', () => Swiper );
-
     Navigation.registerComponent('poisedAthleteMeditation.Home', () => Home );
-
     Navigation.registerComponent('poisedAthleteMeditation.GoalEdit', () => GoalEdit );
-
     Navigation.registerComponent('poisedAthleteMeditation.GoalsListing', () => GoalsListing );
-
     Navigation.registerComponent('poisedAthleteMeditation.GoalDetail', () => GoalDetail );
-
-
-
+    Navigation.registerComponent('poisedAthleteMeditation.LoginScreen', () => LoginScreen );
+    Navigation.registerComponent('poisedAthleteMeditation.IntroSwiperScreen', () => IntroSwiperScreen );
+    Navigation.registerComponent('poisedAthleteMeditation.ForgotPasswordScreen', () => ForgotPasswordScreen );
 
     
-
+    
+    
 
     
     

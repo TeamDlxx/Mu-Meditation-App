@@ -13,7 +13,7 @@ public class MainActivity extends NavigationActivity {
     @Override
     protected  void onCreate(Bundle savedInstanceState){
         // SplashScreen.show(this, R.style.AppTheme);
-        SplashScreen.show(this, R.style.AppTheme);  // false to disable fullscreen
+        SplashScreen.show(this, R.style.AppTheme,true);  // false to disable fullscreen
         super.onCreate(savedInstanceState);
     }
 

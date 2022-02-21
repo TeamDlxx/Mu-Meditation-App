@@ -268,7 +268,8 @@ export default class Swipe extends Component {
                     this.setState({ isAnimating: false, isDisabled: false })
 
 
-                    this.swiper.current.goToNext()
+                    // this.swiper.current.goToNext()
+                    this.letsGo()
 
 
                 }
@@ -413,7 +414,7 @@ export default class Swipe extends Component {
                                                 {/* <View style={{height:37, marginTop: 10,}}> */}
                                                 <TextInput
                                                     style={{ height: 37, width: "100%", borderWidth: 0.5, borderColor: "#737373", borderRadius: 4, paddingLeft: 10, fontSize: 14, color: "black", marginTop: 5 }}
-                                                    placeholder='I will loose 5 pounds'
+                                                    placeholder='Peace'
                                                     placeholderTextColor="#737373"
                                                     onChangeText={(text) => { this.setState({ goalTitle: text }) }}
                                                 />
@@ -455,7 +456,7 @@ export default class Swipe extends Component {
                                                 <Text style={{ color: "black", fontSize: 12, textAlign: "right", marginTop: 5, fontStyle: "italic" }}>Tip: Ensure it's specific and attainable!</Text>
                                             </View> */}
 
-                                            <TouchableOpacity onPress={this.nextButtonForDateSlide} style={{ backgroundColor: "#a1863e", width: 150, alignItems: "center", justifyContent: "center", height: 38, borderRadius: 5, alignSelf: "center", marginTop: 20 }}>
+                                            <TouchableOpacity onPress={this.nextButtonForDateSlide} style={{ backgroundColor: "#a1863e", width: 150, alignItems: "center", justifyContent: "center", height: 38, borderRadius: 5, alignSelf: "center", marginVertical: 20 }}>
                                                 <Text style={{ color: "white", fontFamily: "Gotham-Black" }}>Next</Text>
                                             </TouchableOpacity>
 
@@ -502,7 +503,7 @@ export default class Swipe extends Component {
 
 
                         {this.state.isAnimating &&
-                            <ActivityIndicator size="large" color="white" animating={this.state.isAnimating} style={styles.loading} />
+                            <ActivityIndicator size="large" color="#a1863e" animating={this.state.isAnimating} style={styles.loading} />
                         }
                     </View>
                     {/* swiper ends */}

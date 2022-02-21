@@ -257,15 +257,17 @@ PODS:
     - React-cxxreact (= 0.61.5)
     - React-jsi (= 0.61.5)
   - React-jsinspector (0.61.5)
-  - react-native-background-timer (2.1.1):
-    - React
-  - react-native-netinfo (5.3.3):
-    - React
-  - react-native-splash-screen (3.2.0):
-    - React
+  - react-native-background-timer (2.4.1):
+    - React-Core
+  - react-native-netinfo (5.9.10):
+    - React-Core
+  - react-native-safe-area-context (3.3.2):
+    - React-Core
+  - react-native-splash-screen (3.3.0):
+    - React-Core
   - react-native-track-player (1.1.8):
     - React
-  - react-native-webview (8.0.6):
+  - react-native-webview (8.2.1):
     - React
   - React-RCTActionSheet (0.61.5):
     - React-Core/RCTActionSheetHeaders (= 0.61.5)
@@ -308,11 +310,11 @@ PODS:
     - React
   - rn-fetch-blob (0.12.0):
     - React-Core
-  - RNCAsyncStorage (1.7.1):
-    - React
-  - RNDateTimePicker (3.5.0):
+  - RNCAsyncStorage (1.12.1):
     - React-Core
-  - RNDeviceInfo (5.4.1):
+  - RNDateTimePicker (3.5.2):
+    - React-Core
+  - RNDeviceInfo (5.6.5):
     - React
   - RNFirebase (5.6.0):
     - Firebase/Core
@@ -323,15 +325,17 @@ PODS:
     - Fabric
     - Firebase/Core
     - React
-  - RNIap (4.4.0):
-    - React
-  - RNSound (0.11.0):
-    - React
-    - RNSound/Core (= 0.11.0)
-  - RNSound/Core (0.11.0):
-    - React
+  - RNIap (4.6.3):
+    - React-Core
+  - RNSound (0.11.2):
+    - React-Core
+    - RNSound/Core (= 0.11.2)
+  - RNSound/Core (0.11.2):
+    - React-Core
   - RNStoreReview (0.1.5):
     - React
+  - RNVectorIcons (9.0.0):
+    - React-Core
   - Yoga (1.14.0)
 
 DEPENDENCIES:
@@ -355,6 +359,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-background-timer (from `../node_modules/react-native-background-timer`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
+  - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
   - react-native-track-player (from `../node_modules/react-native-track-player`)
   - react-native-webview (from `../node_modules/react-native-webview`)
@@ -379,6 +384,7 @@ DEPENDENCIES:
   - RNIap (from `../node_modules/react-native-iap`)
   - RNSound (from `../node_modules/react-native-sound`)
   - RNStoreReview (from `../node_modules/react-native-store-review/ios`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -431,6 +437,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-background-timer"
   react-native-netinfo:
     :path: "../node_modules/@react-native-community/netinfo"
+  react-native-safe-area-context:
+    :path: "../node_modules/react-native-safe-area-context"
   react-native-splash-screen:
     :path: "../node_modules/react-native-splash-screen"
   react-native-track-player:
@@ -477,6 +485,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-sound"
   RNStoreReview:
     :path: "../node_modules/react-native-store-review/ios"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -509,11 +519,12 @@ SPEC CHECKSUMS:
   React-jsi: cb2cd74d7ccf4cffb071a46833613edc79cdf8f7
   React-jsiexecutor: d5525f9ed5f782fdbacb64b9b01a43a9323d2386
   React-jsinspector: fa0ecc501688c3c4c34f28834a76302233e29dc0
-  react-native-background-timer: 1b6e6b4e10f1b74c367a1fdc3c72b67c619b222b
-  react-native-netinfo: 8884d510fe67349940b4399c01db3e3591c922aa
-  react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
+  react-native-background-timer: 17ea5e06803401a379ebf1f20505b793ac44d0fe
+  react-native-netinfo: 30fb89fa913c342be82a887b56e96be6d71201dd
+  react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
+  react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
   react-native-track-player: 6e4e91a246efe7121cdef5a43258659a062499db
-  react-native-webview: e32e5ced4c99d7240362690a65e3467d7ef535ef
+  react-native-webview: 160ac8d6bb974e2933f2de6bb7464a8e934ff31d
   React-RCTActionSheet: 600b4d10e3aea0913b5a92256d2719c0cdd26d76
   React-RCTAnimation: 791a87558389c80908ed06cc5dfc5e7920dfa360
   React-RCTBlob: d89293cc0236d9cb0933d85e430b0bbe81ad1d72
@@ -527,13 +538,14 @@ SPEC CHECKSUMS:
   ReactNativeAutogrowTextinput: 571f3260e200d91ea22fab160452f26d2fd5d55b
   ReactNativeNavigation: 937d03602ab4eaeb4684f9c18fc69e580336478c
   rn-fetch-blob: f065bb7ab7fb48dd002629f8bdcb0336602d3cba
-  RNCAsyncStorage: 44395cb9c7c1523104c2b499eb426ef7aff82bca
-  RNDateTimePicker: d4f276aabaf26386bb4dca86e8c92087e7151ba0
-  RNDeviceInfo: 0e40d9a9031252d2525d8b69a4b3fa8689efcea4
+  RNCAsyncStorage: b03032fdbdb725bea0bd9e5ec5a7272865ae7398
+  RNDateTimePicker: 7658208086d86d09e1627b5c34ba0cf237c60140
+  RNDeviceInfo: c5f8f3a456adcbba405ace475254b08febc4c095
   RNFirebase: 37daa9a346d070f9f6ee1f3b4aaf4c8e3b1d5d1c
-  RNIap: 87f0bc97fb427d3f1773d5160966a8808f961c94
-  RNSound: da030221e6ac7e8290c6b43f2b5f2133a8e225b0
+  RNIap: 66b83af54a855b6314a243a200081a64d7f64c2e
+  RNSound: 6c156f925295bdc83e8e422e7d8b38d33bc71852
   RNStoreReview: 62d6afd7c37db711a594bbffca6b0ea3a812b7a8
+  RNVectorIcons: 4143ba35feebab8fdbe6bc43d1e776b393d47ac8
   Yoga: f2a7cd4280bfe2cca5a7aed98ba0eb3d1310f18b
 
 PODFILE CHECKSUM: 0f7ac212aad12c1283819aea2a18645c3017790d

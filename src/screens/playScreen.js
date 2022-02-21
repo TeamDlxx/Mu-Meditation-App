@@ -22,6 +22,8 @@ import {
   
 
 } from 'react-native';
+import {Image as Imagee} from 'react-native-elements';
+
 
 import AsyncStorage from '@react-native-community/async-storage';
 import LoadingGif from "../assets/loadinggif.gif";
@@ -405,6 +407,7 @@ export default class PlayScreen extends Component {
       tracksArrayRecieved: [],
       currentPlayingIndex: "",
       currentTab:'audio',
+
 
     };
   }
@@ -1310,6 +1313,10 @@ export default class PlayScreen extends Component {
 
     if (this.props.tracksArray.length === 1) {
       await this.setState({ switchValue: false })
+    }
+    if (this.props.track.songUrl==='')
+    {
+      this.setState({currentTab:'video'})
     }
     else {
 
@@ -2313,7 +2320,15 @@ export default class PlayScreen extends Component {
                       backgroundColor: '#0000',
                       height: 150,
                     }}>
-                    <Image
+                     <Imagee
+                      PlaceholderContent={
+                          <ActivityIndicator
+                              animating={true}
+                              size="small"
+                              color={'#D2A33A'}
+                          />
+                          }
+
                       style={{ height: 150, width: 160, borderRadius: 20 }}
                       resizeMode="stretch"
                       source={(this.state.isInternetConnected === true) ? { uri: this.state.trackImage } : require('../assets/icons/music_icon.jpg')}
@@ -2326,6 +2341,7 @@ export default class PlayScreen extends Component {
 
               </ImageBackground>
             </View>
+            {(this.props.track.track_type!='audio' && this.props.track.songUrl!='') &&
             <View style={{ flexDirection:'row',marginTop:10}}>
               <TouchableOpacity onPress={()=>{this.changeCurrentTab('audio')}} style={(this.state.currentTab=='audio')?{flex:1,backgroundColor:'#D2A33A',alignItems:'center',justifyContent:'center',marginHorizontal:20,borderRadius:20}:{flex:1,alignItems:'center',justifyContent:'center',marginHorizontal:20,borderRadius:20}}>
                 <Text style={(this.state.currentTab=='audio')?{alignSelf:'center',justifyContent:'center',fontSize:14,fontWeight:'bold',color:'white',paddingVertical:10}:{alignSelf:'center',justifyContent:'center',fontSize:14,fontWeight:'bold',color:'gray',paddingVertical:10}}>Audio</Text>
@@ -2334,6 +2350,7 @@ export default class PlayScreen extends Component {
               <Text style={(this.state.currentTab=='video')?{alignSelf:'center',justifyContent:'center',fontSize:14,fontWeight:'bold',color:'white',paddingVertical:10}:{alignSelf:'center',justifyContent:'center',fontSize:14,fontWeight:'bold',color:'gray',paddingVertical:10}}>Video</Text>
               </TouchableOpacity>
             </View>
+             }
 
 
             {(this.state.currentTab=='audio') &&
@@ -2489,11 +2506,37 @@ export default class PlayScreen extends Component {
             </View>
             }
 
-            {(this.state.currentTab=='video') &&
+            {(this.state.currentTab=='video' && this.props.track.track_type!='audio') &&
             <View style={{ flex: 7 }}>
-              <View style={{ alignItems: "center", justifyContent: "center", width: Dimensions.get("window").width, height: '100%', marginTop: 20 }}>
+              {
+                this.state.isSongLoaded === true &&
+                <View style={{ paddingLeft: 28, paddingRight: 28, marginTop: 10 }}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <View style={{ flex: 4, marginRight: 5, marginTop: 20 }}>
+                      <Text style={styles.headingTxt}>{this.state.trackName}</Text>
+                      <Text style={{ fontSize: 15, color: '#CDD1D9', fontFamily: 'Gotham-Bold' }}>{this.state.playListName}</Text>
+                    </View>
+
+                    <TouchableOpacity onPress={this.checkPermissionForFavoriteFunction}>
+                      <Image resizeMode="contain" source={this.state.FavoritIcon} style={{ height: 45, width: 40 }} />
+                    </TouchableOpacity>
+                  </View>
+
+                  <View style={{ marginTop: 9, minHeight: 65 }}>
+                    {/* <ScrollView showsVerticalScrollIndicator={false}> */}
+                    <Text style={{ fontSize: 16, fontStyle: 'normal' }}>
+                      {this.state.trackDescription}
+                      {/* Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard */}
+                    </Text>
+                    {/* </ScrollView> */}
+
+                  </View>
+
+                </View>
+              }
+              <View style={{ alignItems: "center", justifyContent: "center", width: Dimensions.get("window").width, height: '100%', marginTop: 0 }}>
                                 <WebView
-                                    source={{ uri: encodeURI('https://vimeo.com/253989945') }}
+                                    source={{ uri: encodeURI(this.props.track.video_url) }}
                                     style={{ width: 360, height: '100%', backgroundColor: "black",marginBottom:30 }}
                                     resizeMode="contain"
                                     allowsFullscreenVideo={true}

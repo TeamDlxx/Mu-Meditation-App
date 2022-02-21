@@ -156,7 +156,10 @@ export default class Upgrade extends Component {
             const LocalPricesArray = JSON.parse(await AsyncStorage.getItem('LocalPrices'));
 
             console.log(LocalPricesArray, "array of prices from async");
-
+            if(LocalPricesArray==null)
+            {
+                this.setState({ isAnimating: false, isDisabled: false })
+            }
 
             await this.setState({ LocalLifeTimePyament: LocalPricesArray[0], LocalmonthlyPayment: LocalPricesArray[1], LocalThreeMonthsPayment: LocalPricesArray[2] });
             console.log('itemSkus', itemSkus);

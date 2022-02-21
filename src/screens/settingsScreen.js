@@ -422,27 +422,27 @@ export default class Settings extends Component {
                             <Image source={Arrow} style={styles.arrow}></Image>
                         </TouchableOpacity>
 
-                        {(this.state.purchase === "" || this.state.purchase === null) &&
+                        {/* {(this.state.purchase === "" || this.state.purchase === null) &&
 
                             <TouchableOpacity style={styles.listItem} onPress={this.UpgradeFunction}>
                                 <Text style={styles.itemtxt}>Upgrade to Premium </Text>
                                 <Image source={Arrow} style={styles.arrow}></Image>
                             </TouchableOpacity>
 
-                        }
+                        } */}
 
-                        <TouchableOpacity style={styles.listItem} onPress={this.RestoreAction}>
+                        {/* <TouchableOpacity style={styles.listItem} onPress={this.RestoreAction}>
                             <Text style={styles.itemtxt}>Restore Purchase</Text>
                             <Image source={Arrow} style={styles.arrow}></Image>
-                        </TouchableOpacity>
+                        </TouchableOpacity> */}
 
 
-                        {(this.state.purchase !== "" && this.state.purchase !== null) &&
+                        {/* {(this.state.purchase !== "" && this.state.purchase !== null) &&
                             <TouchableOpacity style={styles.listItem} onPress={this.UpgradeFunction}>
                                 <Text style={styles.itemtxt2}>{this.state.purchaseString}</Text>
                                 <Image source={Arrow} style={styles.arrow}></Image>
                             </TouchableOpacity>
-                        }
+                        } */}
 
                         <View style={styles.listItem}>
                             <Text style={styles.itemtxt}>Automatically play next track</Text>
