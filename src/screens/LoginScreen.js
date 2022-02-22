@@ -118,7 +118,7 @@ export default class LoginScreen extends Component {
 
   buSuccess = async () => {
     if (this.state.UserEmail == '') {
-        Alert('Please enter your email.')
+        alert('Please enter your email.')
 
       return;
     }
@@ -126,20 +126,20 @@ export default class LoginScreen extends Component {
     let validator = this.emailValidateFunc(this.state.UserEmail);
 
     if (!validator) {
-        Alert('Email is not valid.')
+        alert('Email is not valid.')
 
       return;
     }
 
     if (this.state.UserPassword == '') {
-        Alert('Please enter your password.')
+        alert('Please enter your password.')
 
     
       return;
     }
 
     if (this.state.UserPassword.length < 5) {
-        Alert('Password must be at least 5 characters long.')
+        alert('Password must be at least 5 characters long.')
 
       
       return;

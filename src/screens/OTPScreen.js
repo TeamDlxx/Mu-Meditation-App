@@ -13,7 +13,7 @@ import {
 } from "react-native";
 
 
-import TopTitleBarComponent from './../Components/TopTitleBarComponent'
+import TopTitleBarComponent from '../components/TopTitleBarComponent';
 import OTPInputView from '@twotalltotems/react-native-otp-input'
 // import {domain} from "../Api/Api";
 // import { Home } from '../StringFile/Strings';
@@ -128,7 +128,7 @@ export default class OTPScreen extends Component {
                     </View>
                 </ScrollView>
                 {this.state.isAnimating &&
-                    <ActivityIndicator size="large" color="#6159C4" animating={this.state.isAnimating} style={styles.loading} />
+                    <ActivityIndicator size="large" color="#a1863e" animating={this.state.isAnimating} style={styles.loading} />
                 }
             </View>
         )
@@ -199,7 +199,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         height: 55,
         width: screenWidth - 40,
-        backgroundColor: '#6159C4',
+        backgroundColor: '#a1863e',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 10,

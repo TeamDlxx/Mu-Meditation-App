@@ -39,6 +39,9 @@ import GoalDetail from '../screens/GoalDetail'
 import LoginScreen from '../screens/LoginScreen'
 import IntroSwiperScreen from '../screens/IntroSwiperScreen'
 import ForgotPasswordScreen from '../screens/ForgotPasswordScreen'
+import OTPScreen from '../screens/OTPScreen'
+import SetNewPassword from '../screens/SetNewPassword'
+import ChangePasswordScreen from '../screens/ChangePasswordScreen'
 
 
 
@@ -87,6 +90,9 @@ export function registerScreens() {
     Navigation.registerComponent('poisedAthleteMeditation.LoginScreen', () => LoginScreen );
     Navigation.registerComponent('poisedAthleteMeditation.IntroSwiperScreen', () => IntroSwiperScreen );
     Navigation.registerComponent('poisedAthleteMeditation.ForgotPasswordScreen', () => ForgotPasswordScreen );
+    Navigation.registerComponent('poisedAthleteMeditation.OTPScreen', () => OTPScreen );
+    Navigation.registerComponent('poisedAthleteMeditation.SetNewPassword', () => SetNewPassword );
+    Navigation.registerComponent('poisedAthleteMeditation.ChangePasswordScreen', () => ChangePasswordScreen );
 
     
     

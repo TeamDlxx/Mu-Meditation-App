@@ -92,14 +92,14 @@ TrackPlayer.setupPlayer({waitForBuffer: false}).then(() => {
 
    
  }
- if(isLogin == "" || isLogin == null || isLogin == undefined){
-  //  startScreen = "Swiper"
-   startScreen = "LoginScreen"
+//  if(isLogin == "" || isLogin == null || isLogin == undefined){
+//   //  startScreen = "Swiper"
+//    startScreen = "LoginScreen"
+//   //  startScreen = "ChangePasswordScreen"
+
 
    
- }
- 
-
+//  
 
     if (startScreen === "") {
 

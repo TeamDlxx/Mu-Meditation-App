@@ -54,13 +54,13 @@ export default class ForgotPasswordScreen extends Component {
 
   buForgot = () => {
     let validator = this.emailValidateFunc(this.state.UserEmail);
-
+    
     if (validator == true) {
       this.setState({isAnimating: true});
       this.gotoOTPScreen()
       // this.ApiHitting();
     } else {
-        Alert('Email not valid')
+        alert('Email not valid')
       
     }
   };
@@ -85,17 +85,17 @@ export default class ForgotPasswordScreen extends Component {
 
     console.log(response, 'response retured');
     if (response.code === '000') {
-        Alert('Internet connection failed')
+        alert('Internet connection failed')
       
       await this.setState({isAnimating: false});
     } else if (response.code === 200) {
-        Alert('Code Send')
+        alert('Code Send')
 
      
       this.gotoOTPScreen();
       await this.setState({isAnimating: false});
     } else {
-        Alert(response.message)
+        alert(response.message)
 
       await this.setState({isAnimating: false});
     }

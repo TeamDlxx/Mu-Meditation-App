@@ -217,7 +217,25 @@ export default class Settings extends Component {
 
     }
 
+    ChangePasswordFunction = () => {
 
+            Navigation.push(this.props.componentId, {
+                component: {
+                    name: 'poisedAthleteMeditation.ChangePasswordScreen',
+                    passProps: {
+                        privacyPolicyString: this.state.PrivacyPolicy,
+    
+    
+                    },
+                    options: {
+                        bottomTabs: { visible: false },
+                    }
+    
+                }
+    
+            });
+        }
+    
 
     // PrivacyPolicyFunction = () => {
 
@@ -389,7 +407,10 @@ export default class Settings extends Component {
 
                     <View style={{ marginTop: 5, paddingBottom: 32 }}>
 
-
+                    <TouchableOpacity onPress={this.ChangePasswordFunction} style={styles.listItem}>
+                            <Text style={styles.itemtxt}>Change Password</Text>
+                            <Image source={Arrow} style={styles.arrow}></Image>
+                        </TouchableOpacity>
 
                         <TouchableOpacity onPress={this.FeedbackFunction} style={styles.listItem}>
                             <Text style={styles.itemtxt}>Give Feedback</Text>
